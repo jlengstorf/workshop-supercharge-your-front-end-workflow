@@ -1,5 +1,5 @@
 {
-  "glob": ["README.md", "app/**/*.js", "app/**/*.sass", "!app/**/*.min.js", "package.json", "gulpfile.js", "bower.json"],
+  "glob": ["app/**/*.js", "app/**/*.sass", "!app/**/*.min.js", "package.json", "gulpfile.js", "bower.json"],
   "github": true,
   "repository-url": "https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"
 }

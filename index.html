@@ -1,65 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><title>index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="index"><meta name="groc-project-path" content="README.md"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/README.md">README.md</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="workshop-supercharge-your-front-end-workflow">Workshop: Supercharge Your Front-End Workflow</h1>
-<p>In order to optimise your workflow you need to master the tools to do it right.
-In this workshop Jason will introduce the tools that will give you the edge and
-teach you how to automate much of your front-end work to allow you to 
-concentrate on what truly matters! Whether you&#39;re a designer or a developer, 
-these tools don&#39;t need to be scary and can save you <em>hours</em> in the long run.</p>
-<h2 id="what-you39ll-learn">What You&#39;ll Learn</h2>
-<ul>
-<li>Sass techniques, including variables, mixins, 
-extends, loops and functions</li>
-<li>Dependency management (without needing to be a 
-back-end developer!)<ul>
-<li>Bower</li>
-<li>Node</li>
-<li>Git</li>
-</ul>
-</li>
-<li>Using taskrunners for:<ul>
-<li>Sass compilation and minification</li>
-<li>JS linting</li>
-<li>CSS auto-prefixing</li>
-<li>PNG compression</li>
-<li>and more</li>
-</ul>
-</li>
-</ul>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Node 0.12.0</li>
-</ul>
-<p><strong>NOTE:</strong> This app will most likely work with older 
-versions of Node, but it&#39;s only been tested on 
-<code>0.12.0</code> at this point. Use with older versions of 
-Node at your own (low) risk.</p>
-<h2 id="installation">Installation</h2>
-<p>To get this up and running on your computer, start by 
-cloning the repo:</p>
-<pre><code>cd path/to/where/you/want/to/install/
-git clone git@github.com:jlengstorf/workshop-supercharge-your-front-end-workflow.git</code></pre>
-<p>Next, move into the cloned project and install the 
-required dependencies.</p>
-<pre><code>cd ../workshop-supercharge-your-front-end-workflow
-npm install</code></pre>
-<p><strong>NOTE:</strong> <a href="http://bower.io/">Bower</a> components are automatically 
-installed as a <a href="https://docs.npmjs.com/misc/scripts"><code>postinstall</code> script</a>.</p>
-<h2 id="credits">Credits</h2>
-<p><a href="http://lengstorf.com/">Jason Lengstorf</a> built this app with love and bear hugs.</p>
-<h2 id="license">License</h2>
-<p>The MIT License (MIT)</p>
-<p>Copyright (c) 2015 Jason Lengstorf</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p></div></div></div></div></body></html>
+<!DOCTYPE html><html lang="en"><head><title>index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="index"><meta name="groc-project-path" content="app/index.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/index.js">app/index.js</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="supercharge-your-front-end-workflow">Supercharge Your Front-End Workflow</h1></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>This app is built with Express for easy routing and templating</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">var</span> app = express();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p><code>path</code> is used to create filepaths</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Views are written using Jade templates</p></div></div><div class="code"><div class="wrapper">app.set(<span class="hljs-string">'views'</span>, path.join(__dirname, <span class="hljs-string">'server/views/'</span>));
+app.set(<span class="hljs-string">'view engine'</span>, <span class="hljs-string">'jade'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The default route loads the home page</p></div></div><div class="code"><div class="wrapper">app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( req, res )</span> </span>{
+    res.render(<span class="hljs-string">'index'</span>, { title: <span class="hljs-string">'Home'</span> });
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Static files are all stored in the <code>public</code> dir</p></div></div><div class="code"><div class="wrapper">app.use(express.static(path.join(__dirname, <span class="hljs-string">'public'</span>)));</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For now, the app listens on port 3000</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> server = app.listen(<span class="hljs-number">3000</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'App started and listening on port %s'</span>, server.address().port);
+});</div></div></div></div></body></html>

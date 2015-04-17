@@ -1,0 +1,37 @@
+{
+  "name": "workshop-supercharge-your-front-end-workflow",
+  "version": "0.1.0",
+  "description": "A small, sample app on which we will exert pitiless dominance in our quest for front-end supremacy.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"
+  },
+  "author": {
+    "name": "Jason Lengstorf",
+    "email": "jason@lengstorf.com",
+    "url": "http://lengstorf.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/issues"
+  },
+  "dependencies": {
+    "bower": "^1.4.1",
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^1.3.3",
+    "gulp-scss-lint": "^0.1.12",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}

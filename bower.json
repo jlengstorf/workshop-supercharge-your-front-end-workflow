@@ -1,0 +1,18 @@
+{
+  "name": "workshop-supercharge-your-front-end-workflow",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow",
+  "authors": [
+    "Jason Lengstorf <jason@lengstorf.com>"
+  ],
+  "description": "A small, sample app on which we will exert pitiless dominance in our quest for front-end supremacy.",
+  "main": "app/index.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "doc",
+    "node_modules",
+    "bower_components"
+  ]
+}

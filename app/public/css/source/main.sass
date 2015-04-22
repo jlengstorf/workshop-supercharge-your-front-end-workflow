@@ -1,11 +1,27 @@
-.test
-  color: red
-  background: black
+/*
+ * # App Styles
+ */
 
-  li
-    font-size: 1.2em
-    transform: translate3d(0,0,0);
+// ## Variables
+// Style variables are all kept in one place for easy editing.
+@import includes/variables
 
-  p
-    margin: 10px
-    padding: 3px 4px
+// ## Fonts
+// Fonts are loaded from [Google Fonts](http://www.google.com/fonts)
+@import url("http://fonts.googleapis.com/css?family=#{$importFontFamily}");
+
+// ## Shared Resources
+// Mixins and animations are shared by all stylesheets
+@import includes/animations
+@import includes/mixins
+
+// ## Common Styles
+// Styles that affect all pages and layouts
+@import common/general
+@import common/typography
+@import common/header
+@import common/footer
+
+// ## Layouts
+// Styles are separated out by layout for easy editing.
+@import layouts/blog

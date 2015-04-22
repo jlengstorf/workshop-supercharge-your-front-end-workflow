@@ -1,0 +1,40 @@
+/*
+ * # General Site Styles
+ * These are styles that apply to the whole site.
+ */
+
+*
+  box-sizing: border-box;
+  margin: 0
+
+// The lobotomized owl selector makes layout easier. For more info, see the 
+// [write-up by Heydon Pickering](http://bit.ly/1H7MXUD).
+*+*
+  margin-top: $vertUnit
+
+body
+  margin: 0
+  padding-top: $vertUnit*2.5
+
+// This container wraps all content except the header and footer.
+.main-content
+  max-width: $maxWidth
+  width: 100%
+  margin: 0 auto
+  padding-top: $vertUnit*2
+
+// This class can be added to any container to add 3 columns.
+.add-columns
+  @include add-columns(3)
+
+// Quick-and-dirty responsive images
+.image
+  max-width: 100%
+  height: auto
+
+// Forces an image to float center
+.image--full-width
+  @extend .image
+  max-width: $maxWidth
+  margin-left: auto
+  margin-right: auto

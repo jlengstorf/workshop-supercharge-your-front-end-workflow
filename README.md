@@ -11,18 +11,15 @@ these tools don't need to be scary and can save you *hours* in the long run.
 What You'll Learn
 -------------------------------------------------------------------------------
 
-- Sass techniques, including variables, mixins, 
-  extends, loops and functions
-- Dependency management (without needing to be a 
-  back-end developer!)
+- Sass techniques, including variables, mixins, extends, loops and functions
+- Dependency management (without needing to be a back-end developer!)
   - Bower
   - Node
-  - Git
 - Using taskrunners for:
   - Sass compilation and minification
-  - JS linting
+  - JavaScript linting
   - CSS auto-prefixing
-  - PNG compression
+  - Image compression
   - and more
 
 
@@ -31,10 +28,9 @@ Requirements
 
 * Node 0.12.0
 
-**NOTE:** This app will most likely work with older 
-versions of Node, but it's only been tested on 
-`0.12.0` at this point. Use with older versions of 
-Node at your own (low) risk.
+**NOTE:** This app will most likely work with older versions of Node, but it's 
+only been tested on `0.12.0` at this point. Use with older versions of Node at 
+your own (low) risk.
 
 
 Installation
@@ -52,8 +48,8 @@ required dependencies.
     cd ../workshop-supercharge-your-front-end-workflow
     npm install
 
-**NOTE:** [Bower][1] components are automatically 
-installed as a [`postinstall` script][2].
+**NOTE:** [Bower][1] components are automatically installed as a 
+[`postinstall` script][2].
 
 
 Credits
@@ -86,8 +82,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
 
 
 [1]: http://bower.io/

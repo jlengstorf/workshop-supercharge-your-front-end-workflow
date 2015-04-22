@@ -14,5 +14,10 @@
     "doc",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "devDependencies": {
+    "bows": "~1.4.2"
+  },
+  "dependencies": {
+  }
 }

@@ -20,7 +20,10 @@
     var name = this.constructor.name || 'Supercharged';
 
     // - Chooses a logger
-    this.log = this.debug ? bows(name) : function(){};
+    this.log = typeof bows==='function' ? bows(name) : function(){};
+
+    // - Sets logging according to config options
+    localStorage.debug = (this.debug) ? true : '';
 
     // - Create an initial log message to announce that the class was created
     this.log('New instance created.');

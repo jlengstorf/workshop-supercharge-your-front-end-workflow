@@ -4,8 +4,24 @@ block title
     title= title
 
 block content
-  h1 Hello World!
+  .photo-viewer
+    p.photo-viewer__loading Loading...
+  .latest-posts
+    h2.latest-posts__title Latest Posts
+    .latest-posts__wrapper
+      each post in blogs
+        article.blog-preview--mini
+          a.blog-preview__image(href=post.permalink)
+            img(src=post.image alt=post.title)
+          h3.blog-preview__title
+            a(href=post.permalink)= post.title
+          a.blog-preview__read-more(href=post.permalink) Read This Post
+  .mini-about
+    h2.mini-about__headline A Little Bit About Me
+    p.mini-about__content.
+      Champ Kind: Champ here. I'm all about havin' fun. You know, start a fire 
+      in someone's kitchen, maybe go to SeaWorld, take my pants off... Anyway, 
+      I've become kind of famous for my signature catch-phrase... WHAMMY!. 
+      Like, Gene Tenace at the plate… and WHAMMY!
 
 block appscripts
-  script.
-    console.log("It's working!");

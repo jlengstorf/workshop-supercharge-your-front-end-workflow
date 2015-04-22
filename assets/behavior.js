@@ -21,9 +21,20 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         "projectPath": "app/index.js",
         "targetPath": "index",
         "pageTitle": "index",
-        "title": "index"
+        "firstHeader": {
+          "type": "heading",
+          "data": {
+            "level": 1,
+            "title": "Supercharge Your Front-End Workflow",
+            "slug": "supercharge-your-front-end-workflow",
+            "isFileHeader": true
+          },
+          "depth": 1
+        },
+        "title": "Supercharge Your Front-End Workflow"
       },
-      "depth": 1
+      "depth": 1,
+      "outline": []
     }, {
       "type": "file",
       "data": {
@@ -39,7 +50,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         "pageTitle": "bower",
         "title": "bower"
       },
-      "depth": 1
+      "depth": 1,
+      "outline": []
     }, {
       "type": "file",
       "data": {
@@ -56,9 +68,121 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         "projectPath": "gulpfile.js",
         "targetPath": "gulpfile",
         "pageTitle": "gulpfile",
-        "title": "gulpfile"
+        "firstHeader": {
+          "type": "heading",
+          "data": {
+            "level": 1,
+            "title": "Task Automation Using Gulp",
+            "slug": "task-automation-using-gulp",
+            "isFileHeader": true
+          },
+          "depth": 1,
+          "children": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 1: Include Gulp and any additional modules required",
+                "slug": "step-1-include-gulp-and-any-additional-modules-required"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 2: Create a Style Task",
+                "slug": "step-2-create-a-style-task"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 3: Create a Script Task",
+                "slug": "step-3-create-a-script-task"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 5: Watch files for changes to automatically update them",
+                "slug": "step-5-watch-files-for-changes-to-automatically-update-them"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 6: Create a server",
+                "slug": "step-6-create-a-server"
+              },
+              "depth": 2
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 2,
+                "title": "Step 7: Create a default task",
+                "slug": "step-7-create-a-default-task"
+              },
+              "depth": 2
+            }
+          ]
+        },
+        "title": "Task Automation Using Gulp"
       },
-      "depth": 1
+      "depth": 1,
+      "outline": [
+        {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 1: Include Gulp and any additional modules required",
+            "slug": "step-1-include-gulp-and-any-additional-modules-required"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 2: Create a Style Task",
+            "slug": "step-2-create-a-style-task"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 3: Create a Script Task",
+            "slug": "step-3-create-a-script-task"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 5: Watch files for changes to automatically update them",
+            "slug": "step-5-watch-files-for-changes-to-automatically-update-them"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 6: Create a server",
+            "slug": "step-6-create-a-server"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Step 7: Create a default task",
+            "slug": "step-7-create-a-default-task"
+          },
+          "depth": 2
+        }
+      ]
     }, {
       "type": "file",
       "data": {
@@ -74,7 +198,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         "pageTitle": "package",
         "title": "package"
       },
-      "depth": 1
+      "depth": 1,
+      "outline": []
     }, {
       "type": "folder",
       "data": {
@@ -100,6 +225,289 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "depth": 3,
               "children": [
                 {
+                  "type": "folder",
+                  "data": {
+                    "path": "public/css/source/common",
+                    "title": "common"
+                  },
+                  "depth": 4,
+                  "children": [
+                    {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/common/footer.sass",
+                        "projectPath": "app/public/css/source/common/footer.sass",
+                        "targetPath": "public/css/source/common/footer",
+                        "pageTitle": "public/css/source/common/footer",
+                        "title": "footer"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/common/general.sass",
+                        "projectPath": "app/public/css/source/common/general.sass",
+                        "targetPath": "public/css/source/common/general",
+                        "pageTitle": "public/css/source/common/general",
+                        "title": "general"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/common/header.sass",
+                        "projectPath": "app/public/css/source/common/header.sass",
+                        "targetPath": "public/css/source/common/header",
+                        "pageTitle": "public/css/source/common/header",
+                        "title": "header"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/common/typography.sass",
+                        "projectPath": "app/public/css/source/common/typography.sass",
+                        "targetPath": "public/css/source/common/typography",
+                        "pageTitle": "public/css/source/common/typography",
+                        "title": "typography"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }
+                  ]
+                }, {
+                  "type": "folder",
+                  "data": {
+                    "path": "public/css/source/includes",
+                    "title": "includes"
+                  },
+                  "depth": 4,
+                  "children": [
+                    {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/includes/animations.sass",
+                        "projectPath": "app/public/css/source/includes/animations.sass",
+                        "targetPath": "public/css/source/includes/animations",
+                        "pageTitle": "public/css/source/includes/animations",
+                        "title": "animations"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/includes/mixins.sass",
+                        "projectPath": "app/public/css/source/includes/mixins.sass",
+                        "targetPath": "public/css/source/includes/mixins",
+                        "pageTitle": "public/css/source/includes/mixins",
+                        "title": "mixins"
+                      },
+                      "depth": 5,
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Effects Mixins",
+                            "slug": "effects-mixins"
+                          },
+                          "depth": 2,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Hover Effect",
+                                "slug": "hover-effect"
+                              },
+                              "depth": 3
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Add Columns",
+                                "slug": "add-columns"
+                              },
+                              "depth": 3
+                            }
+                          ]
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Utility Mixins",
+                            "slug": "utility-mixins"
+                          },
+                          "depth": 2,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Clearfix",
+                                "slug": "clearfix"
+                              },
+                              "depth": 3
+                            }
+                          ]
+                        }
+                      ]
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/includes/variables.sass",
+                        "projectPath": "app/public/css/source/includes/variables.sass",
+                        "targetPath": "public/css/source/includes/variables",
+                        "pageTitle": "public/css/source/includes/variables",
+                        "title": "variables"
+                      },
+                      "depth": 5,
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Fonts",
+                            "slug": "fonts"
+                          },
+                          "depth": 2,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Headings",
+                                "slug": "headings"
+                              },
+                              "depth": 3
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "General Text",
+                                "slug": "general-text"
+                              },
+                              "depth": 3
+                            }
+                          ]
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Colors",
+                            "slug": "colors"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Measurements",
+                            "slug": "measurements"
+                          },
+                          "depth": 2
+                        }
+                      ]
+                    }
+                  ]
+                }, {
+                  "type": "folder",
+                  "data": {
+                    "path": "public/css/source/layouts",
+                    "title": "layouts"
+                  },
+                  "depth": 4,
+                  "children": [
+                    {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".sass"],
+                          "pygmentsLexer": "sass",
+                          "highlightJS": "AUTO",
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "Sass"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/layouts/blog.sass",
+                        "projectPath": "app/public/css/source/layouts/blog.sass",
+                        "targetPath": "public/css/source/layouts/blog",
+                        "pageTitle": "public/css/source/layouts/blog",
+                        "title": "blog"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }
+                  ]
+                }, {
                   "type": "file",
                   "data": {
                     "language": {
@@ -117,26 +525,50 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                     "pageTitle": "public/css/source/main",
                     "title": "main"
                   },
-                  "depth": 4
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".sass"],
-                      "pygmentsLexer": "sass",
-                      "highlightJS": "AUTO",
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "Sass"
-                    },
-                    "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/css/source/typography.sass",
-                    "projectPath": "app/public/css/source/typography.sass",
-                    "targetPath": "public/css/source/typography",
-                    "pageTitle": "public/css/source/typography",
-                    "title": "typography"
-                  },
-                  "depth": 4
+                  "depth": 4,
+                  "outline": [
+                    {
+                      "type": "heading",
+                      "data": {
+                        "level": 2,
+                        "title": "Variables",
+                        "slug": "variables"
+                      },
+                      "depth": 2
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 2,
+                        "title": "Fonts",
+                        "slug": "fonts"
+                      },
+                      "depth": 2
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 2,
+                        "title": "Shared Resources",
+                        "slug": "shared-resources"
+                      },
+                      "depth": 2
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 2,
+                        "title": "Common Styles",
+                        "slug": "common-styles"
+                      },
+                      "depth": 2
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 2,
+                        "title": "Layouts",
+                        "slug": "layouts"
+                      },
+                      "depth": 2
+                    }
+                  ]
                 }
               ]
             }
@@ -150,6 +582,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "depth": 2,
           "children": [
             {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/js/all.min.js",
+                "projectPath": "app/public/js/all.min.js",
+                "targetPath": "public/js/all.min",
+                "pageTitle": "public/js/all.min",
+                "title": "all.min"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
               "type": "folder",
               "data": {
                 "path": "public/js/source",
@@ -169,13 +621,164 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                       "foldPrefix": "^",
                       "name": "JavaScript"
                     },
+                    "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/js/source/class.supercharged.js",
+                    "projectPath": "app/public/js/source/class.supercharged.js",
+                    "targetPath": "public/js/source/class.supercharged",
+                    "pageTitle": "public/js/source/class.supercharged",
+                    "firstHeader": {
+                      "type": "heading",
+                      "data": {
+                        "level": 1,
+                        "title": "The Supercharged Class",
+                        "slug": "the-supercharged-class",
+                        "isFileHeader": true
+                      },
+                      "depth": 1
+                    },
+                    "title": "The Supercharged Class"
+                  },
+                  "depth": 4,
+                  "outline": []
+                }, {
+                  "type": "file",
+                  "data": {
+                    "language": {
+                      "nameMatchers": [".js"],
+                      "pygmentsLexer": "javascript",
+                      "multiLineComment": ["/*", "*", "*/"],
+                      "singleLineComment": ["//"],
+                      "ignorePrefix": "}",
+                      "foldPrefix": "^",
+                      "name": "JavaScript"
+                    },
                     "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/js/source/main.js",
                     "projectPath": "app/public/js/source/main.js",
                     "targetPath": "public/js/source/main",
                     "pageTitle": "public/js/source/main",
-                    "title": "main"
+                    "firstHeader": {
+                      "type": "heading",
+                      "data": {
+                        "level": 1,
+                        "title": "JavaScript",
+                        "slug": "javascript",
+                        "isFileHeader": true
+                      },
+                      "depth": 1
+                    },
+                    "title": "JavaScript"
                   },
-                  "depth": 4
+                  "depth": 4,
+                  "outline": []
+                }
+              ]
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "public/vendor",
+            "title": "vendor"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "folder",
+              "data": {
+                "path": "public/vendor/bows",
+                "title": "bows"
+              },
+              "depth": 3,
+              "children": [
+                {
+                  "type": "file",
+                  "data": {
+                    "language": {
+                      "nameMatchers": [".js"],
+                      "pygmentsLexer": "javascript",
+                      "multiLineComment": ["/*", "*", "*/"],
+                      "singleLineComment": ["//"],
+                      "ignorePrefix": "}",
+                      "foldPrefix": "^",
+                      "name": "JavaScript"
+                    },
+                    "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/vendor/bows/bows.js",
+                    "projectPath": "app/public/vendor/bows/bows.js",
+                    "targetPath": "public/vendor/bows/bows",
+                    "pageTitle": "public/vendor/bows/bows",
+                    "title": "bows"
+                  },
+                  "depth": 4,
+                  "outline": []
+                }, {
+                  "type": "file",
+                  "data": {
+                    "language": {
+                      "nameMatchers": [".js"],
+                      "pygmentsLexer": "javascript",
+                      "multiLineComment": ["/*", "*", "*/"],
+                      "singleLineComment": ["//"],
+                      "ignorePrefix": "}",
+                      "foldPrefix": "^",
+                      "name": "JavaScript"
+                    },
+                    "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/vendor/bows/build.js",
+                    "projectPath": "app/public/vendor/bows/build.js",
+                    "targetPath": "public/vendor/bows/build",
+                    "pageTitle": "public/vendor/bows/build",
+                    "title": "build"
+                  },
+                  "depth": 4,
+                  "outline": []
+                }, {
+                  "type": "folder",
+                  "data": {
+                    "path": "public/vendor/bows/dist",
+                    "title": "dist"
+                  },
+                  "depth": 4,
+                  "children": [
+                    {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".js"],
+                          "pygmentsLexer": "javascript",
+                          "multiLineComment": ["/*", "*", "*/"],
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "JavaScript"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/vendor/bows/dist/bows.js",
+                        "projectPath": "app/public/vendor/bows/dist/bows.js",
+                        "targetPath": "public/vendor/bows/dist/bows",
+                        "pageTitle": "public/vendor/bows/dist/bows",
+                        "title": "bows"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }, {
+                      "type": "file",
+                      "data": {
+                        "language": {
+                          "nameMatchers": [".js"],
+                          "pygmentsLexer": "javascript",
+                          "multiLineComment": ["/*", "*", "*/"],
+                          "singleLineComment": ["//"],
+                          "ignorePrefix": "}",
+                          "foldPrefix": "^",
+                          "name": "JavaScript"
+                        },
+                        "sourcePath": "/Users/jlengstorf/Dropbox/htdocs/workshops/supercharge-your-front-end-workflow/httpdocs/app/public/vendor/bows/dist/bows.min.js",
+                        "projectPath": "app/public/vendor/bows/dist/bows.min.js",
+                        "targetPath": "public/vendor/bows/dist/bows.min",
+                        "pageTitle": "public/vendor/bows/dist/bows.min",
+                        "title": "bows.min"
+                      },
+                      "depth": 5,
+                      "outline": []
+                    }
+                  ]
                 }
               ]
             }

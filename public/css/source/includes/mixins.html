@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><title>public/css/source/includes/mixins</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="public/css/source/includes/mixins"><meta name="groc-project-path" content="app/public/css/source/includes/mixins.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/includes/mixins.sass">app/public/css/source/includes/mixins.sass</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">/<span class="hljs-keyword">*</span>
+ <span class="hljs-keyword">*</span> <span class="hljs-comment"># Mixins</span>
+ <span class="hljs-keyword">*</span>
+ <span class="hljs-keyword">*</span> These are reusable styles for quick use within the app.
+ <span class="hljs-keyword">*</span>/</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="effects-mixins">Effects Mixins</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="hover-effect">Hover Effect</h3>
+<p>Uses pseudo-elements to create an animated on and off state for elements</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">hoverEffect</span><span class="hljs-params">(  )</span></span>
+  <span class="hljs-pseudo">&amp;::before,</span><span class="hljs-pseudo">&amp;::after
+</span>    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>
+    <span class="hljs-attribute">position</span>: absolute
+    <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.25s</span> ease-out</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p><strong>NOTE:</strong> This only works on elements that support pseudo-elements. If you 
+want to use it on an image, for example, you&#39;ll need a wrapper element.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-pseudo">&amp;::before
+</span>    <span class="hljs-attribute">top</span>: <span class="hljs-number">7%</span>
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">7%</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">44%</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">42%</span>
+    <span class="hljs-attribute">background</span>: <span class="hljs-function"><span class="hljs-title">rgba</span><span class="hljs-params">(<span class="hljs-number">60</span>,<span class="hljs-number">165</span>,<span class="hljs-number">255</span>,.<span class="hljs-number">6</span>)</span></span>
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">53%</span>
+    <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.25s</span> ease-out
+    <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">100%</span> <span class="hljs-number">102%</span>
+    <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">5.5s</span> linear reverse infinite
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">5</span>
+
+  <span class="hljs-pseudo">&amp;::after
+</span>    <span class="hljs-attribute">top</span>: <span class="hljs-number">4%</span>
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">6%</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">48%</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">46%</span>
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-function"><span class="hljs-title">rgba</span><span class="hljs-params">(<span class="hljs-number">240</span>, <span class="hljs-number">105</span>, <span class="hljs-number">130</span>, <span class="hljs-number">0.6</span>)</span></span>
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">55%</span>
+    -webkit-<span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
+    -ms-<span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
+    <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
+    -webkit-<span class="hljs-attribute">animation</span>: spin <span class="hljs-number">15s</span> linear infinite
+    <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">15s</span> linear infinite
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">8</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>On hover, the pseudo-elements get bigger </p></div></div><div class="code"><div class="wrapper">  <span class="hljs-pseudo">&amp;:hover,</span><span class="hljs-pseudo">&amp;:active
+</span>    <span class="hljs-pseudo">&amp;::before,</span><span class="hljs-pseudo">&amp;::after
+</span>      <span class="hljs-attribute">top</span>: -<span class="hljs-number">4%</span>
+      <span class="hljs-attribute">left</span>: -<span class="hljs-number">4%</span>
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">55%</span>
+      <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>
+
+    <span class="hljs-pseudo">&amp;::before
+</span>      <span class="hljs-attribute">width</span>: <span class="hljs-number">109%</span>
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">104%</span>
+
+    <span class="hljs-pseudo">&amp;::after
+</span>      <span class="hljs-attribute">width</span>: <span class="hljs-number">110%</span>
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">104%</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="add-columns">Add Columns</h3>
+<p>Makes any container a newspaper-style layout with justified text and 
+columns. Pass the number of columns as an argument.</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">add-columns</span><span class="hljs-params">( <span class="hljs-variable">$columnCount</span>: <span class="hljs-number">2</span> )</span></span>
+  <span class="hljs-attribute">columns</span>: <span class="hljs-variable">$columnCount</span>
+  <span class="hljs-attribute">column-gap</span>: <span class="hljs-variable">$vertUnit</span>*<span class="hljs-number">2</span>
+
+  <span class="hljs-tag">p</span>
+    <span class="hljs-attribute">text-align</span>: justify
+
+    &amp;+<span class="hljs-tag">p</span>
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>
+      <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">1em</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="utility-mixins">Utility Mixins</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="clearfix">Clearfix</h3>
+<p>Avoids floated elements going outside their container elements. This 
+version is based on <a href="http://bit.ly/1F6f4Sm">Chris Coyier&#39;s recommendation</a>.</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">clearfix</span><span class="hljs-params">(  )</span></span>
+  <span class="hljs-pseudo">&amp;::after </span>
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>
+    <span class="hljs-attribute">display</span>: <span class="hljs-tag">table</span>
+    <span class="hljs-attribute">clear</span>: both</div></div></div></div></body></html>

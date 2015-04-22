@@ -7,13 +7,25 @@ never need to think about it again.</em> Build once, win forever.</p>
 <p><strong>NOTE:</strong> Don&#39;t forget to install the modules:</p>
 <pre><code>npm install --save-dev gulp</code></pre>
 <p><code>--save-dev</code> should be used for any modules only required for development.</p>
-<p>To install a module that&#39;s used throughout the app, use <code>--save</code> instead.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>To make things easy, auto-load all gulp modules.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-built_in">require</span>(<span class="hljs-string">'matchdep'</span>).filterDev(<span class="hljs-string">'gulp*'</span>).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( module )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Remove the <code>gulp-</code> prefix for better readability.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> module_name = <span class="hljs-built_in">module</span>.replace(<span class="hljs-regexp">/^gulp-/</span>, <span class="hljs-string">''</span>).replace(<span class="hljs-regexp">/-/</span>, <span class="hljs-string">''</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Then require the module.</p></div></div><div class="code"><div class="wrapper">  global[module_name] = <span class="hljs-built_in">require</span>(<span class="hljs-built_in">module</span>);
+<p>To install a module that&#39;s used throughout the app, use <code>--save</code> instead.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For easy reference, declare all filepaths in one place.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> paths = {
+  styles: {
+    src: <span class="hljs-string">'./app/public/css/source/main.sass'</span>,
+    dest: <span class="hljs-string">'./app/public/css/'</span>,
+    watch: <span class="hljs-string">'./app/public/css/source/**/*.sass'</span> <span class="hljs-comment">// Better LiveReload support.</span>
+  },
+  scripts: {
+    src: <span class="hljs-string">'./app/public/js/source/**/*.js'</span>,
+    dest: <span class="hljs-string">'./app/public/js/'</span>
+  },
+  bower_dependencies: {
+    src: <span class="hljs-string">'./app/server/views/layouts/default.jade'</span>,
+    dest: <span class="hljs-string">'./app/server/views/layouts'</span>
+  }
+};</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>To make things easy, auto-load all gulp modules.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-built_in">require</span>(<span class="hljs-string">'matchdep'</span>).filterDev(<span class="hljs-string">'gulp*'</span>).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( module )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Remove the <code>gulp-</code> prefix &amp; internal hyphens for better module var names.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> module_name = <span class="hljs-built_in">module</span>.replace(<span class="hljs-regexp">/^gulp-/</span>, <span class="hljs-string">''</span>).replace(<span class="hljs-regexp">/-/</span>, <span class="hljs-string">''</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Then require the module.</p></div></div><div class="code"><div class="wrapper">  global[module_name] = <span class="hljs-built_in">require</span>(<span class="hljs-built_in">module</span>);
 
 });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-2-create-a-style-task">Step 2: Create a Style Task</h2></div></div></div><div class="segment"><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'styles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Target the source SASS files</li>
-</ul></div></div><div class="code"><div class="wrapper">  gulp.src(<span class="hljs-string">'./app/public/css/source/**/*.sass'</span>)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
-<li>Check the SASS file for syntax issues</li>
-</ul></div></div><div class="code"><div class="wrapper">    .pipe(scsslint())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+</ul></div></div><div class="code"><div class="wrapper">  gulp.src(paths.styles.src)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Create a source map for easier development</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.init())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Compile SASS files into CSS</li>
@@ -25,6 +37,49 @@ never need to think about it again.</em> Build once, win forever.</p>
 <li>Write the sourcemap to the output folder</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.write(<span class="hljs-string">'.'</span>))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Save the new CSS file</li>
-</ul></div></div><div class="code"><div class="wrapper">    .pipe(gulp.dest(<span class="hljs-string">'./app/public/css/'</span>));
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(gulp.dest(paths.styles.dest))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Reload the browser</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(livereload());
 
-});</div></div></div></div></body></html>
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-3-create-a-script-task">Step 3: Create a Script Task</h2></div></div></div><div class="segment"><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'scripts'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For better JSHint output, we&#39;re going to use <code>jshint-stylish</code>.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> stylish = <span class="hljs-built_in">require</span>(<span class="hljs-string">'jshint-stylish'</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Target the source JS files</li>
+</ul></div></div><div class="code"><div class="wrapper">  gulp.src(paths.scripts.src)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Check the JS for syntax issues</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(jshint())
+    .pipe(jshint.reporter(stylish))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Create a source map for easier development</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.init())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Concatenate all scripts into one file</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(concat(<span class="hljs-string">'all.min.js'</span>))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Compress the output for smaller file size</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(uglify())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Write the sourcemap to the output folder</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.write(<span class="hljs-string">'.'</span>))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Save the new JS file</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(gulp.dest(paths.scripts.dest))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Reload the browser</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(livereload());
+
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-4-automatically-inject-bower-dependencies-using-wiredep-">Step 4: Automatically inject Bower dependencies using <code>wiredep</code></h2></div></div><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'bower_dependencies'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Use the <code>stream</code> support wiredep offers</li>
+</ul></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> wiredep = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wiredep'</span>).stream;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Target which file(s) need to have dependencies included</li>
+</ul></div></div><div class="code"><div class="wrapper">  gulp.src(paths.bower_dependencies.src)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Wire all Bower dependencies into the source files</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(wiredep({ devDependencies: <span class="hljs-literal">true</span>, ignorePath: <span class="hljs-string">'../../../public'</span> }))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Save the file in the destination directory</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(gulp.dest(paths.bower_dependencies.dest))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Reload the browser</li>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(livereload());
+
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-5-watch-files-for-changes-to-automatically-update-them">Step 5: Watch files for changes to automatically update them</h2></div></div></div><div class="segment"><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'watch'</span>, [<span class="hljs-string">'serve'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Start listening on the LiveReload port</li>
+</ul></div></div><div class="code"><div class="wrapper">  livereload.listen();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set up a watcher on files to execute the proper tasks</li>
+</ul></div></div><div class="code"><div class="wrapper">  gulp.watch(paths.styles.watch, [<span class="hljs-string">'styles'</span>]);
+  gulp.watch(paths.scripts.src, [<span class="hljs-string">'scripts'</span>]);
+
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-6-create-a-server">Step 6: Create a server</h2></div></div></div><div class="segment"><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'serve'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Nodemon makes it extremely simple to run a dev server locally</p></div></div><div class="code"><div class="wrapper">  nodemon({ script: <span class="hljs-string">'./app/index.js'</span> });
+
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="step-7-create-a-default-task">Step 7: Create a default task</h2>
+<p>Each of the tasks created above will now execute at once by running <code>gulp</code></p></div></div><div class="code"><div class="wrapper">gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'watch'</span>]);</div></div></div></div></body></html>

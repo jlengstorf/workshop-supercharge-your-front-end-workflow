@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><title>public/vendor/bows/dist/bows</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="public/vendor/bows/dist/bows"><meta name="groc-project-path" content="app/public/vendor/bows/dist/bows.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/vendor/bows/dist/bows.js">app/public/vendor/bows/dist/bows.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">!<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{<span class="hljs-keyword">if</span>(<span class="hljs-string">"object"</span>==<span class="hljs-keyword">typeof</span> exports&amp;&amp;<span class="hljs-string">"undefined"</span>!=<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span>)<span class="hljs-built_in">module</span>.exports=e();<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-string">"function"</span>==<span class="hljs-keyword">typeof</span> define&amp;&amp;define.amd)define([],e);<span class="hljs-keyword">else</span>{<span class="hljs-keyword">var</span> f;<span class="hljs-string">"undefined"</span>!=<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span>?f=<span class="hljs-built_in">window</span>:<span class="hljs-string">"undefined"</span>!=<span class="hljs-keyword">typeof</span> global?f=global:<span class="hljs-string">"undefined"</span>!=<span class="hljs-keyword">typeof</span> self&amp;&amp;(f=self),f.bows=e()}}(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">var</span> define,<span class="hljs-built_in">module</span>,exports;<span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">e</span><span class="hljs-params">(t,n,r)</span></span>{<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">s</span><span class="hljs-params">(o,u)</span></span>{<span class="hljs-keyword">if</span>(!n[o]){<span class="hljs-keyword">if</span>(!t[o]){<span class="hljs-keyword">var</span> a=<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">require</span>==<span class="hljs-string">"function"</span>&amp;&amp;<span class="hljs-built_in">require</span>;<span class="hljs-keyword">if</span>(!u&amp;&amp;a)<span class="hljs-keyword">return</span> a(o,!<span class="hljs-number">0</span>);<span class="hljs-keyword">if</span>(i)<span class="hljs-keyword">return</span> i(o,!<span class="hljs-number">0</span>);<span class="hljs-keyword">var</span> f=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Cannot find module '"</span>+o+<span class="hljs-string">"'"</span>);<span class="hljs-keyword">throw</span> f.code=<span class="hljs-string">"MODULE_NOT_FOUND"</span>,f}<span class="hljs-keyword">var</span> l=n[o]={exports:{}};t[o][<span class="hljs-number">0</span>].call(l.exports,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{<span class="hljs-keyword">var</span> n=t[o][<span class="hljs-number">1</span>][e];<span class="hljs-keyword">return</span> s(n?n:e)},l,l.exports,e,t,n,r)}<span class="hljs-keyword">return</span> n[o].exports}<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">require</span>==<span class="hljs-string">"function"</span>&amp;&amp;<span class="hljs-built_in">require</span>;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> o=<span class="hljs-number">0</span>;o&lt;r.length;o++)s(r[o]);<span class="hljs-keyword">return</span> s})({<span class="hljs-number">1</span>:[<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require,module,exports)</span></span>{
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkColorSupport</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> chrome = !!<span class="hljs-built_in">window</span>.chrome,
+        firefox = <span class="hljs-regexp">/firefox/i</span>.test(navigator.userAgent),
+        firefoxVersion;
+
+    <span class="hljs-keyword">if</span> (firefox) {
+        <span class="hljs-keyword">var</span> match = navigator.userAgent.match(<span class="hljs-regexp">/Firefox\/(\d+\.\d+)/</span>);
+        <span class="hljs-keyword">if</span> (match &amp;&amp; match[<span class="hljs-number">1</span>] &amp;&amp; <span class="hljs-built_in">Number</span>(match[<span class="hljs-number">1</span>])) {
+            firefoxVersion = <span class="hljs-built_in">Number</span>(match[<span class="hljs-number">1</span>]);
+        }
+    }
+    <span class="hljs-keyword">return</span> chrome || firefoxVersion &gt;= <span class="hljs-number">31.0</span>;
+  }
+
+  <span class="hljs-keyword">var</span> yieldColor = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> goldenRatio = <span class="hljs-number">0.618033988749895</span>;
+    hue += goldenRatio;
+    hue = hue % <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> hue * <span class="hljs-number">360</span>;
+  };
+
+  <span class="hljs-keyword">var</span> inNode = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> === <span class="hljs-string">'undefined'</span>,
+      ls = !inNode &amp;&amp; <span class="hljs-built_in">window</span>.localStorage,
+      debugKey = ls.andlogKey || <span class="hljs-string">'debug'</span>,
+      debug = ls[debugKey],
+      logger = <span class="hljs-built_in">require</span>(<span class="hljs-string">'andlog'</span>),
+      bind = <span class="hljs-built_in">Function</span>.prototype.bind,
+      hue = <span class="hljs-number">0</span>,
+      padLength = <span class="hljs-number">15</span>,
+      noop = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{},
+      colorsSupported = ls.debugColors || checkColorSupport(),
+      bows = <span class="hljs-literal">null</span>,
+      debugRegex = <span class="hljs-literal">null</span>,
+      invertRegex = <span class="hljs-literal">false</span>
+      moduleColorsMap = {};
+
+  <span class="hljs-keyword">if</span> (debug &amp;&amp; debug[<span class="hljs-number">0</span>] === <span class="hljs-string">'!'</span> &amp;&amp; debug[<span class="hljs-number">1</span>] === <span class="hljs-string">'/'</span>) {
+    invertRegex = <span class="hljs-literal">true</span>;
+    debug = debug.slice(<span class="hljs-number">1</span>);
+  }
+  debugRegex = debug &amp;&amp; debug[<span class="hljs-number">0</span>]===<span class="hljs-string">'/'</span> &amp;&amp; <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(debug.substring(<span class="hljs-number">1</span>,debug.length-<span class="hljs-number">1</span>));
+
+  <span class="hljs-keyword">var</span> logLevels = [<span class="hljs-string">'log'</span>, <span class="hljs-string">'debug'</span>, <span class="hljs-string">'warn'</span>, <span class="hljs-string">'error'</span>, <span class="hljs-string">'info'</span>];
+
+  <span class="hljs-comment">//Noop should noop</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, ii = logLevels.length; i &lt; ii; i++) {
+      noop[ logLevels[i] ] = noop;
+  }
+
+  bows = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(str)</span> </span>{
+    <span class="hljs-keyword">var</span> msg, colorString, logfn;
+    msg = (str.slice(<span class="hljs-number">0</span>, padLength));
+    msg += <span class="hljs-built_in">Array</span>(padLength + <span class="hljs-number">3</span> - msg.length).join(<span class="hljs-string">' '</span>) + <span class="hljs-string">'|'</span>;
+
+    <span class="hljs-keyword">if</span> (debugRegex) {
+        <span class="hljs-keyword">var</span> matches = str.match(debugRegex);
+        <span class="hljs-keyword">if</span> (
+            (!invertRegex &amp;&amp; !matches) ||
+            (invertRegex &amp;&amp; matches)
+        ) <span class="hljs-keyword">return</span> noop;
+    }
+
+    <span class="hljs-keyword">if</span> (!bind) <span class="hljs-keyword">return</span> noop;
+
+    <span class="hljs-keyword">var</span> logArgs = [logger];
+    <span class="hljs-keyword">if</span> (colorsSupported) {
+      <span class="hljs-keyword">if</span>(!moduleColorsMap[str]){
+        moduleColorsMap[str]= yieldColor();
+      }
+      <span class="hljs-keyword">var</span> color = moduleColorsMap[str];
+      msg = <span class="hljs-string">"%c"</span> + msg;
+      colorString = <span class="hljs-string">"color: hsl("</span> + (color) + <span class="hljs-string">",99%,40%); font-weight: bold"</span>;
+
+      logArgs.push(msg, colorString);
+    }<span class="hljs-keyword">else</span>{
+      logArgs.push(msg);
+    }
+
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length&gt;<span class="hljs-number">1</span>){
+        <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+        logArgs = logArgs.concat(args);
+    }
+
+    logfn = bind.apply(logger.log, logArgs);
+
+    logLevels.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(f)</span> </span>{
+      logfn[f] = bind.apply(logger[f] || logfn, logArgs);
+    });
+    <span class="hljs-keyword">return</span> logfn;
+  };
+
+  bows.config = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(config)</span> </span>{
+    <span class="hljs-keyword">if</span> (config.padLength) {
+      padLength = config.padLength;
+    }
+  };
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> !== <span class="hljs-string">'undefined'</span>) {
+    <span class="hljs-built_in">module</span>.exports = bows;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">window</span>.bows = bows;
+  }
+}).call();
+
+},{<span class="hljs-string">"andlog"</span>:<span class="hljs-number">2</span>}],<span class="hljs-number">2</span>:[<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(require,module,exports)</span></span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>follow @HenrikJoreteg and @andyet if you like this ;)</p></div></div><div class="code"><div class="wrapper">(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> inNode = <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span> === <span class="hljs-string">'undefined'</span>,
+        ls = !inNode &amp;&amp; <span class="hljs-built_in">window</span>.localStorage,
+        out = {};
+
+    <span class="hljs-keyword">if</span> (inNode) {
+        <span class="hljs-built_in">module</span>.exports = <span class="hljs-built_in">console</span>;
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">var</span> andlogKey = ls.andlogKey || <span class="hljs-string">'debug'</span>
+    <span class="hljs-keyword">if</span> (ls &amp;&amp; ls[andlogKey] &amp;&amp; <span class="hljs-built_in">window</span>.console) {
+        out = <span class="hljs-built_in">window</span>.console;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">var</span> methods = <span class="hljs-string">"assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn"</span>.split(<span class="hljs-string">","</span>),
+            l = methods.length,
+            fn = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{};
+
+        <span class="hljs-keyword">while</span> (l--) {
+            out[methods[l]] = fn;
+        }
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> exports !== <span class="hljs-string">'undefined'</span>) {
+        <span class="hljs-built_in">module</span>.exports = out;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">window</span>.console = out;
+    }
+})();
+
+},{}]},{},[<span class="hljs-number">1</span>])(<span class="hljs-number">1</span>)
+});</div></div></div></div></body></html>

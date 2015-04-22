@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><title>public/vendor/bows/build</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="public/vendor/bows/build"><meta name="groc-project-path" content="app/public/vendor/bows/build.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/vendor/bows/build.js">app/public/vendor/bows/build.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'browserify'</span>),
+    fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>),
+    uglify = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uglify-js"</span>);
+
+<span class="hljs-keyword">var</span> b = browserify({ standalone: <span class="hljs-string">'bows'</span> });
+b.add(<span class="hljs-string">'./bows.js'</span>);
+b.bundle(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(error, code)</span> </span>{
+    fs.writeFileSync(<span class="hljs-string">'./dist/bows.js'</span>, code);
+
+    <span class="hljs-comment">//Uglify</span>
+    <span class="hljs-keyword">var</span> min_code = uglify.minify(<span class="hljs-string">'./dist/bows.js'</span>).code;
+    fs.writeFileSync(<span class="hljs-string">'./dist/bows.min.js'</span>, min_code);
+});</div></div></div></div></body></html>

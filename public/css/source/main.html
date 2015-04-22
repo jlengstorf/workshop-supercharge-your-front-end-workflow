@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><title>public/css/source/main</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="public/css/source/main"><meta name="groc-project-path" content="app/public/css/source/main.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/main.sass">app/public/css/source/main.sass</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-class">.test</span>
-  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red
-  background: black
-
-  li
-    font-size: <span class="hljs-number">1.2em</span>
-    transform: <span class="hljs-function">translate3d</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span></span>;
-
-  <span class="hljs-tag">p</span>
-    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">10px</span>
-    padding: <span class="hljs-number">3px</span> <span class="hljs-number">4px</span>
-</span></span></div></div></div></div></body></html>
+<!DOCTYPE html><html lang="en"><head><title>public/css/source/main</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../"><meta name="groc-document-path" content="public/css/source/main"><meta name="groc-project-path" content="app/public/css/source/main.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../assets/style.css"><script type="text/javascript" src="../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/main.sass">app/public/css/source/main.sass</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">/<span class="hljs-keyword">*</span>
+ <span class="hljs-keyword">*</span> <span class="hljs-comment"># App Styles</span>
+ <span class="hljs-keyword">*</span>/</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="variables">Variables</h2>
+<p>Style variables are all kept in one place for easy editing.</p></div></div><div class="code"><div class="wrapper">@<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> includes/variables</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="fonts">Fonts</h2>
+<p>Fonts are loaded from <a href="http://www.google.com/fonts">Google Fonts</a></p></div></div><div class="code"><div class="wrapper"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-function">url</span>(<span class="hljs-string">"http://fonts.googleapis.com/css?family=#{$importFontFamily}"</span>)</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="shared-resources">Shared Resources</h2>
+<p>Mixins and animations are shared by all stylesheets</p></div></div><div class="code"><div class="wrapper"><span class="hljs-at_rule">@import</span> includes/animations
+<span class="hljs-variable">@import</span> includes/mixins</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="common-styles">Common Styles</h2>
+<p>Styles that affect all pages and layouts</p></div></div><div class="code"><div class="wrapper"><span class="hljs-at_rule">@import</span> common/general
+<span class="hljs-variable">@import</span> common/typography
+<span class="hljs-variable">@import</span> common/header
+<span class="hljs-variable">@import</span> common/footer</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="layouts">Layouts</h2>
+<p>Styles are separated out by layout for easy editing.</p></div></div><div class="code"><div class="wrapper">@<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> layouts/blog</span></div></div></div></div></body></html>

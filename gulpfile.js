@@ -108,7 +108,7 @@ gulp.task('scripts', function(  ) {
 
 });
 
-// ## Step 4: Automatically inject Bower dependencies using `wiredep`
+// ## Step 4: Use `wiredep` to automatically inject Bower dependencies
 gulp.task('bower_dependencies', function(  ) {
 
   // - Use the `stream` support wiredep offers

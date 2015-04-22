@@ -1,0 +1,12 @@
+mixin renderPreviews( blogPosts )
+  for post in blogPosts
+    +blogPreview(post.title, post.image, post.excerpt, post.permalink)
+
+mixin blogPreview( title, image, excerpt, permalink )
+  article.blog-preview
+    a.blog-preview__image(href=permalink)
+      img(src=image alt=title)
+    h2.blog-preview__title
+      a(href=permalink)= title
+    p.blog-preview__excerpt= excerpt
+    a.blog-preview__more-link(href=permalink) Read This Entry

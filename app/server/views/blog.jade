@@ -1,0 +1,12 @@
+extends ./layouts/default
+
+include ./mixins/blog-posts
+
+block title
+    title= title
+
+block content
+  h1 Blog
+  +renderPreviews(blogs)
+
+block appscripts

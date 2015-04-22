@@ -7,6 +7,9 @@ var app = express();
 // `path` is used to create filepaths
 var path = require('path');
 
+// Check for a port in the ENV before setting one manually
+app.set('port', process.env.PORT || 3000);
+
 // Views are written using Jade templates
 app.set('views', path.join(__dirname, 'server/views/'));
 app.set('view engine', 'jade');
@@ -108,6 +111,6 @@ app.use(function(req, res, next) {
 });
 
 // Start the app on port 3000
-var server = app.listen(3000, function(  ) {
+var server = app.listen(app.get('port'), function(  ) {
   console.log('App started and listening on port %s', server.address().port);
 });

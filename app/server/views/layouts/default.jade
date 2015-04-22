@@ -7,7 +7,12 @@ html(lang="en")
     // endbower
     link(rel="stylesheet" href="/css/all.min.css")
   body
-    block content
+    include ../partials/_header
+    .main-content
+      block content
+    include ../partials/_footer
     // bower:js
+    script(src='/vendor/bows/dist/bows.js')
     // endbower
+    script(src='/js/all.min.js')
     block appscripts

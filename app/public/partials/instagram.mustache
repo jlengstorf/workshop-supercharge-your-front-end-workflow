@@ -1,0 +1,12 @@
+<h2 class="photo-viewer__heading">Photos from Instagram</h2>
+<ul class="photo-viewer__list">
+{{#photos}}
+  <li class="photo-viewer__photo">
+    <a href="{{link}}" class="photo-viewer__photo-link">
+      <img class="photo-viewer__image"
+           alt="{{caption}}"
+           src="{{imgSrc}}">
+    </a>
+  </li>
+{{/photos}}
+</ul>

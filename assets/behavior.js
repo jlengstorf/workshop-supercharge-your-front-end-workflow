@@ -915,12 +915,173 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                             "slug": "classsuperchargedjs",
                             "isFileHeader": true
                           },
-                          "depth": 1
+                          "depth": 1,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Add a constructor",
+                                "slug": "add-a-constructor"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Load a URL via AJAX",
+                                "slug": "load-a-url-via-ajax"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Load data via JSONP",
+                                "slug": "load-data-via-jsonp"
+                              },
+                              "depth": 2,
+                              "children": [
+                                {
+                                  "type": "heading",
+                                  "data": {
+                                    "level": 3,
+                                    "title": "Create a unique callback function to handle the response",
+                                    "slug": "create-a-unique-callback-function-to-handle-the-response"
+                                  },
+                                  "depth": 3
+                                }, {
+                                  "type": "heading",
+                                  "data": {
+                                    "level": 3,
+                                    "title": "Embed the script",
+                                    "slug": "embed-the-script"
+                                  },
+                                  "depth": 3
+                                }
+                              ]
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Process a template",
+                                "slug": "process-a-template"
+                              },
+                              "depth": 2,
+                              "children": [
+                                {
+                                  "type": "heading",
+                                  "data": {
+                                    "level": 3,
+                                    "title": "Load the template and specify success and failure callbacks",
+                                    "slug": "load-the-template-and-specify-success-and-failure-callbacks"
+                                  },
+                                  "depth": 3
+                                }
+                              ]
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Add markup to the DOM",
+                                "slug": "add-markup-to-the-dom"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Handle application errors",
+                                "slug": "handle-application-errors"
+                              },
+                              "depth": 2
+                            }
+                          ]
                         },
                         "title": "class.supercharged.js"
                       },
                       "depth": 5,
-                      "outline": []
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Add a constructor",
+                            "slug": "add-a-constructor"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Load a URL via AJAX",
+                            "slug": "load-a-url-via-ajax"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Load data via JSONP",
+                            "slug": "load-data-via-jsonp"
+                          },
+                          "depth": 2,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Create a unique callback function to handle the response",
+                                "slug": "create-a-unique-callback-function-to-handle-the-response"
+                              },
+                              "depth": 3
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Embed the script",
+                                "slug": "embed-the-script"
+                              },
+                              "depth": 3
+                            }
+                          ]
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Process a template",
+                            "slug": "process-a-template"
+                          },
+                          "depth": 2,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 3,
+                                "title": "Load the template and specify success and failure callbacks",
+                                "slug": "load-the-template-and-specify-success-and-failure-callbacks"
+                              },
+                              "depth": 3
+                            }
+                          ]
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Add markup to the DOM",
+                            "slug": "add-markup-to-the-dom"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Handle application errors",
+                            "slug": "handle-application-errors"
+                          },
+                          "depth": 2
+                        }
+                      ]
                     }, {
                       "type": "file",
                       "data": {
@@ -945,12 +1106,65 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                             "slug": "classsuperchargedfacebookjs",
                             "isFileHeader": true
                           },
-                          "depth": 1
+                          "depth": 1,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Create a constructor",
+                                "slug": "create-a-constructor"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Load user media",
+                                "slug": "load-user-media"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Handle the JSON response",
+                                "slug": "handle-the-json-response"
+                              },
+                              "depth": 2
+                            }
+                          ]
                         },
                         "title": "class.superchargedfacebook.js"
                       },
                       "depth": 5,
-                      "outline": []
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Create a constructor",
+                            "slug": "create-a-constructor"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Load user media",
+                            "slug": "load-user-media"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Handle the JSON response",
+                            "slug": "handle-the-json-response"
+                          },
+                          "depth": 2
+                        }
+                      ]
                     }, {
                       "type": "file",
                       "data": {
@@ -975,12 +1189,65 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                             "slug": "classsuperchargedinstagramjs",
                             "isFileHeader": true
                           },
-                          "depth": 1
+                          "depth": 1,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Create a constructor",
+                                "slug": "create-a-constructor"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Load user media",
+                                "slug": "load-user-media"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Handle the JSON response",
+                                "slug": "handle-the-json-response"
+                              },
+                              "depth": 2
+                            }
+                          ]
                         },
                         "title": "class.superchargedinstagram.js"
                       },
                       "depth": 5,
-                      "outline": []
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Create a constructor",
+                            "slug": "create-a-constructor"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Load user media",
+                            "slug": "load-user-media"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Handle the JSON response",
+                            "slug": "handle-the-json-response"
+                          },
+                          "depth": 2
+                        }
+                      ]
                     }, {
                       "type": "file",
                       "data": {
@@ -1035,12 +1302,49 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                             "slug": "mainjs",
                             "isFileHeader": true
                           },
-                          "depth": 1
+                          "depth": 1,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Set up the Instagram photo loader",
+                                "slug": "set-up-the-instagram-photo-loader"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Set up the Facebook album loader",
+                                "slug": "set-up-the-facebook-album-loader"
+                              },
+                              "depth": 2
+                            }
+                          ]
                         },
                         "title": "main.js"
                       },
                       "depth": 5,
-                      "outline": []
+                      "outline": [
+                        {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Set up the Instagram photo loader",
+                            "slug": "set-up-the-instagram-photo-loader"
+                          },
+                          "depth": 2
+                        }, {
+                          "type": "heading",
+                          "data": {
+                            "level": 2,
+                            "title": "Set up the Facebook album loader",
+                            "slug": "set-up-the-facebook-album-loader"
+                          },
+                          "depth": 2
+                        }
+                      ]
                     }
                   ]
                 }

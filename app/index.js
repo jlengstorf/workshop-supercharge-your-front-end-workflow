@@ -112,10 +112,10 @@ app.get('/blog/:slug/', function( req, res ) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // If something goes wrong with the server, send a simple message
-// app.use(function(err, req, res, next) {
-//   console.error(err.stack);
-//   res.status(500).send('Something broke!');
-// });
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
 
 // Add 404 handling for pages that don't exist
 app.use(function(req, res, next) {

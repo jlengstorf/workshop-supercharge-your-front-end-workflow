@@ -4,3 +4,10 @@ node_modules
 
 # Bower dependency directory
 app/public/vendor
+
+# Config variables
+app/public/js/source/config.js
+!app/public/js/source/config.js.*
+
+# Docs don't need to be on the master branch
+doc

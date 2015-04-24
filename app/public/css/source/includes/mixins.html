@@ -1,8 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><title>public/css/source/includes/mixins</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="public/css/source/includes/mixins"><meta name="groc-project-path" content="app/public/css/source/includes/mixins.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/includes/mixins.sass">app/public/css/source/includes/mixins.sass</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">/<span class="hljs-keyword">*</span>
- <span class="hljs-keyword">*</span> <span class="hljs-comment"># Mixins</span>
- <span class="hljs-keyword">*</span>
- <span class="hljs-keyword">*</span> These are reusable styles for quick use within the app.
- <span class="hljs-keyword">*</span>/</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="effects-mixins">Effects Mixins</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="hover-effect">Hover Effect</h3>
+<!DOCTYPE html><html lang="en"><head><title>app/public/css/source/includes/mixins</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../"><meta name="groc-document-path" content="app/public/css/source/includes/mixins"><meta name="groc-project-path" content="app/public/css/source/includes/mixins.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../../assets/style.css"><script type="text/javascript" src="../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/includes/mixins.sass">app/public/css/source/includes/mixins.sass</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="mixinssass">mixins.sass</h1>
+<p>These are reusable styles for quick use within the app.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="effects">Effects</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="hover-effect">Hover Effect</h3>
 <p>Uses pseudo-elements to create an animated on and off state for elements</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">hoverEffect</span><span class="hljs-params">(  )</span></span>
   <span class="hljs-pseudo">&amp;::before,</span><span class="hljs-pseudo">&amp;::after
 </span>    <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>
@@ -27,10 +24,7 @@ want to use it on an image, for example, you&#39;ll need a wrapper element.</p><
     <span class="hljs-attribute">height</span>: <span class="hljs-number">46%</span>
     <span class="hljs-attribute">background-color</span>: <span class="hljs-function"><span class="hljs-title">rgba</span><span class="hljs-params">(<span class="hljs-number">240</span>, <span class="hljs-number">105</span>, <span class="hljs-number">130</span>, <span class="hljs-number">0.6</span>)</span></span>
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">55%</span>
-    -webkit-<span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
-    -ms-<span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
     <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">97%</span> <span class="hljs-number">99%</span>
-    -webkit-<span class="hljs-attribute">animation</span>: spin <span class="hljs-number">15s</span> linear infinite
     <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">15s</span> linear infinite
     <span class="hljs-attribute">z-index</span>: <span class="hljs-number">8</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>On hover, the pseudo-elements get bigger </p></div></div><div class="code"><div class="wrapper">  <span class="hljs-pseudo">&amp;:hover,</span><span class="hljs-pseudo">&amp;:active
 </span>    <span class="hljs-pseudo">&amp;::before,</span><span class="hljs-pseudo">&amp;::after
@@ -56,7 +50,24 @@ columns. Pass the number of columns as an argument.</p></div></div><div class="c
 
     &amp;+<span class="hljs-tag">p</span>
       <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>
-      <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">1em</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="utility-mixins">Utility Mixins</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="clearfix">Clearfix</h3>
+      <span class="hljs-attribute">text-indent</span>: <span class="hljs-number">1em</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="typography">Typography</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="adjust-the-font-sizes-and-settings">Adjust the font sizes and settings</h3></div></div></div><div class="segment"><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">setFontSizes</span><span class="hljs-params">( <span class="hljs-variable">$fontSize</span> )</span></span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set the font baseline site-wide</li>
+</ul></div></div><div class="code"><div class="wrapper">  <span class="hljs-tag">body</span>
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$fontSize</span>
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-function"><span class="hljs-title">setLineHeight</span><span class="hljs-params">(<span class="hljs-variable">$fontSize</span>)</span></span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Increase font size for leads and blockquotes</li>
+</ul></div></div><div class="code"><div class="wrapper">  <span class="hljs-tag">blockquote</span>,<span class="hljs-class">.post__lead</span>
+    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-variable">$fontSize</span> * <span class="hljs-number">1.125</span>
+    line-height: <span class="hljs-function">setLineHeight</span>(<span class="hljs-variable">$fontSize</span>*<span class="hljs-number">1.125</span>)
+</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Reset heading sizes (for proper line-height)</li>
+</ul></div></div><div class="code"><div class="wrapper">  +<span class="hljs-function"><span class="hljs-title">setHeadingSize</span><span class="hljs-params">(<span class="hljs-variable">$fontSize</span>)</span></span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="calculate-heading-font-sizes">Calculate heading font sizes</h3>
+<p>Using a loop, call the <code>set-heading-size()</code> function and set heading sizes.</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-built_in">set</span>HeadingSize( <span class="hljs-variable">$fontSize</span> )
+  @<span class="hljs-keyword">for</span> <span class="hljs-variable">$i</span> <span class="hljs-keyword">from</span> <span class="hljs-number">1</span> through <span class="hljs-number">6</span>
+    h<span class="hljs-comment">#{$i}</span>
+      <span class="hljs-variable">$headingSize</span>: getHeadingSize(<span class="hljs-variable">$i</span>)
+      font-size: <span class="hljs-variable">$headingSize</span>
+      line-height: <span class="hljs-built_in">set</span>LineHeight(<span class="hljs-variable">$headingSize</span>)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h2 id="utilities">Utilities</h2></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h3 id="clearfix">Clearfix</h3>
 <p>Avoids floated elements going outside their container elements. This 
 version is based on <a href="http://bit.ly/1F6f4Sm">Chris Coyier&#39;s recommendation</a>.</p></div></div><div class="code"><div class="wrapper">=<span class="hljs-function"><span class="hljs-title">clearfix</span><span class="hljs-params">(  )</span></span>
   <span class="hljs-pseudo">&amp;::after </span>

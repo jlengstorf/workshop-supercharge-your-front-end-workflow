@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><title>app/public/js/source/class.supercharged</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="app/public/js/source/class.supercharged"><meta name="groc-project-path" content="app/public/js/source/class.supercharged.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/js/source/class.supercharged.js">app/public/js/source/class.supercharged.js</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="the-supercharged-class">The Supercharged Class</h1>
+<p>This class contains methods and properties relating to the app. They&#39;re set 
+up in a way that allows us to quickly and easily call methods without the 
+need to remember lots of parameters.</p></div></div><div class="code"><div class="wrapper">(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">  'use strict'</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Supercharged</span><span class="hljs-params">( options )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Check for user-supplied options and use an empty object if none exists</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> opts = options || {};</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set debug mode based on config (defaults to <code>false</code>)</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.debug = opts.debug || <span class="hljs-literal">false</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Get the container from the options (default <code>false</code> to fail gracefully)</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.container = opts.container || <span class="hljs-literal">false</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set the number of photos to be displayed</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.photosToDisplay = opts.photosToDisplay || <span class="hljs-number">10</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set the location of the template for displaying output</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.template = opts.template || <span class="hljs-literal">false</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Get the class name (for debugging)</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> name = <span class="hljs-keyword">this</span>.constructor.name || <span class="hljs-string">'Supercharged'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Chooses a logger</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.log = <span class="hljs-keyword">typeof</span> bows===<span class="hljs-string">'function'</span> ? bows(name) : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{};</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Sets logging according to config options</li>
+</ul></div></div><div class="code"><div class="wrapper">    localStorage.debug = (<span class="hljs-keyword">this</span>.debug) ? <span class="hljs-literal">true</span> : <span class="hljs-string">''</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Create an initial log message to announce that the class was created</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.log(<span class="hljs-string">'New instance created.'</span>);
+
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Using <code>Object.create</code> allows us to easily extend this object later.</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype = <span class="hljs-built_in">Object</span>.create({
+    constructor: {
+      value: Supercharged
+    }
+  });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Loads a URL via AJAX</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype.loadURL = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( url, successCB, errorCB, loadJSON )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set up an <code>XMLHttpRequest</code> object (Look Ma! No jQuery!)</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> self=<span class="hljs-keyword">this</span>,
+        request = <span class="hljs-keyword">new</span> XMLHttpRequest(),
+        success = <span class="hljs-keyword">typeof</span> successCB===<span class="hljs-string">'function'</span> ? successCB : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        error = <span class="hljs-keyword">typeof</span> errorCB===<span class="hljs-string">'function'</span> ? errorCB : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{};
+    </div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Make sure the <code>loadJSON</code> argument is boolean</li>
+</ul></div></div><div class="code"><div class="wrapper">    loadJSON = loadJSON===<span class="hljs-literal">false</span> ? <span class="hljs-literal">false</span> : <span class="hljs-literal">true</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Open the request to load the URL</li>
+</ul></div></div><div class="code"><div class="wrapper">    request.open(<span class="hljs-string">'GET'</span>, url, <span class="hljs-literal">true</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Set a handler for when the request is loaded</li>
+</ul></div></div><div class="code"><div class="wrapper">    request.onload = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Check for a valid response code</li>
+</ul></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">if</span> (request.status&gt;=<span class="hljs-number">200</span> &amp;&amp; request.status&lt;<span class="hljs-number">400</span>) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Check if the response is expected to be JSON</li>
+</ul></div></div><div class="code"><div class="wrapper">        <span class="hljs-keyword">var</span> response = <span class="hljs-string">''</span>;
+        <span class="hljs-keyword">if</span> (!!loadJSON) {
+          response = <span class="hljs-built_in">JSON</span>.parse(request.responseText);
+        } <span class="hljs-keyword">else</span> {
+          response = request.responseText;
+        }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Fire the success callback</li>
+</ul></div></div><div class="code"><div class="wrapper">        success(response);
+
+      } <span class="hljs-keyword">else</span> {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>If the request status is wrong, fire the error callback</li>
+</ul></div></div><div class="code"><div class="wrapper">        error(request);
+
+      }
+
+    };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>If the request throws an error, fire the error callback</li>
+</ul></div></div><div class="code"><div class="wrapper">    request.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(  )</span> </span>{
+      error(request);
+    };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Actually send the request</li>
+</ul></div></div><div class="code"><div class="wrapper">    request.send();
+
+  };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For sites without CORS headers, we use JSONP as a workaround</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype.loadJSONP = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( url, successCB )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Create a unique callback function to handle the response<ul>
+<li>Create an empty array with one element</li>
+</ul>
+</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> random = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint32Array</span>(<span class="hljs-number">1</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Generate a random value and fill the new array</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-built_in">window</span>.crypto.getRandomValues(random);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Generate a unique name for the callback using the random value</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> cbName = <span class="hljs-string">'cb'</span> + random[<span class="hljs-number">0</span>];</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Create a function to act as the the JSONP callback</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-built_in">window</span>[cbName] = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( data )</span> </span>{
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> successCB===<span class="hljs-string">'function'</span>) {
+        successCB(data);
+      }
+    };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Create a script and load the URL with a reference to our callback</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> jsonp = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+    jsonp.src = url + <span class="hljs-string">'&amp;callback='</span> + cbName;
+    <span class="hljs-built_in">document</span>.head.appendChild(jsonp);
+
+  };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Load a Mustache template and process it with template variables</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype.renderTemplate = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( template, templateVars, callback )</span> </span>{
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>,
+        cb = <span class="hljs-keyword">typeof</span> callback===<span class="hljs-string">'function'</span> ? callback : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
+        success = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(template)</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>After successfully loading the template, render it with Mustache</li>
+</ul></div></div><div class="code"><div class="wrapper">          <span class="hljs-keyword">var</span> markup = Mustache.render(template, templateVars);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Call the given callback function to do something with the markup</li>
+</ul></div></div><div class="code"><div class="wrapper">          cb(markup);
+
+        };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Make sure the template is set</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">if</span> (!!template) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Load the template and specify success and failure callbacks<ul>
+<li>Templates should not be loaded as JSON, so set <code>loadJSON</code> to <code>false</code> </li>
+</ul>
+</li>
+</ul></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">this</span>.loadURL(template, success, <span class="hljs-keyword">this</span>.handleError, <span class="hljs-literal">false</span>);
+
+    } <span class="hljs-keyword">else</span> {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Log a message if no template is specified</li>
+</ul></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">this</span>.log(<span class="hljs-string">'No template specified.'</span>);
+
+    }
+
+  };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Add the rendered template markup to the DOM inside a specified element</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype.addToDOM = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( markup )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Select the container </li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> container = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-keyword">this</span>.container);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Ensure the container exists</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">if</span> (container) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Replace its contents with the new markup</li>
+</ul></div></div><div class="code"><div class="wrapper">      container.innerHTML = markup;
+
+    } <span class="hljs-keyword">else</span> {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>Log a message if the container is invalid</li>
+</ul></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">this</span>.log(<span class="hljs-string">'Please specify a valid container.'</span>);
+
+    }
+
+  };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Handle application errors</p></div></div><div class="code"><div class="wrapper">  Supercharged.prototype.handleError = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( error )</span> </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+<li>For lack of better error handling, simply log errors for now</li>
+</ul></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.log(error);
+
+  };</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Make the Supercharged class available in the global scope</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-built_in">window</span>.Supercharged = Supercharged;
+
+}).call();</div></div></div></div></body></html>

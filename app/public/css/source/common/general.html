@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><title>app/public/css/source/common/general</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../"><meta name="groc-document-path" content="app/public/css/source/common/general"><meta name="groc-project-path" content="app/public/css/source/common/general.sass"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="../../../../../assets/style.css"><script type="text/javascript" src="../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/app/public/css/source/common/general.sass">app/public/css/source/common/general.sass</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="generalsass">general.sass</h1>
+<p>These are styles that apply to the whole site.</p></div></div><div class="code"><div class="wrapper">*
+  <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span>
+</span></span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The lobotomized owl selector makes layout easier. For more info, see the 
+<a href="http://bit.ly/1H7MXUD">write-up by Heydon Pickering</a>.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-comment">*+*</span>
+  margin-top: <span class="hljs-label">$vertUnit</span>
+
+body
+  margin: 0
+  padding-top: <span class="hljs-label">$vertUnit</span>*2.5 <span class="hljs-comment">// - Keep content from hitting the header</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>This container wraps all content except the header and footer.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.main-content</span>
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">$maxWidth</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-attribute">auto</span>
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$vertUnit</span>*<span class="hljs-number">2</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>This class can be added to any container to add 3 columns.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.add-columns</span>
+  <span class="hljs-at_rule">@include</span> <span class="hljs-function"><span class="hljs-title">add-columns</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span></span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Quick-and-dirty responsive images</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.image</span>
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>
+  <span class="hljs-attribute">height</span>: <span class="hljs-attribute">auto</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Forces an image to float center</p></div></div><div class="code"><div class="wrapper"><span class="hljs-class">.image--full-width</span>
+  <span class="hljs-at_rule">@extend</span> <span class="hljs-class">.image</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-variable">$maxWidth</span>
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-attribute">auto</span>
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-attribute">auto</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>This is a placeholder class. It can only be extended and won&#39;t be included 
+in the final CSS file.</p></div></div><div class="code"><div class="wrapper">%<span class="hljs-built_in">image</span>--<span class="hljs-built_in">float</span>
+  <span class="hljs-built_in">max</span>-<span class="hljs-variable">width</span>: <span class="hljs-number">35</span>%
+  margin-bottom: $vertUnit
+
+  img
+    <span class="hljs-built_in">max</span>-<span class="hljs-variable">width</span>: <span class="hljs-number">100</span>%</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Floats an image to the left</p></div></div><div class="code"><div class="wrapper">.<span class="hljs-keyword">image</span>--<span class="hljs-keyword">align</span>-left
+  <span class="hljs-variable">@extend</span> .<span class="hljs-keyword">image</span>
+  <span class="hljs-variable">@extend</span> <span class="hljs-variable">%image</span>--<span class="hljs-keyword">float</span>
+  <span class="hljs-keyword">float</span>: left
+  margin-right: <span class="hljs-variable">$vertUnit</span>
+  margin-left: <span class="hljs-number">0</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Floats an image to the right</p></div></div><div class="code"><div class="wrapper">.<span class="hljs-keyword">image</span>--<span class="hljs-keyword">align</span>-right
+  <span class="hljs-variable">@extend</span> .<span class="hljs-keyword">image</span>
+  <span class="hljs-variable">@extend</span> <span class="hljs-variable">%image</span>--<span class="hljs-keyword">float</span>
+  <span class="hljs-keyword">float</span>: right
+  margin-left: <span class="hljs-variable">$vertUnit</span>
+  margin-right: <span class="hljs-number">0</span></div></div></div></div></body></html>

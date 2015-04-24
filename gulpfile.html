@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>gulpfile</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="gulpfile"><meta name="groc-project-path" content="gulpfile.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/gulpfile.js">gulpfile.js</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="task-automation-using-gulp">Task Automation Using Gulp</h1>
+<!DOCTYPE html><html lang="en"><head><title>gulpfile</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="gulpfile"><meta name="groc-project-path" content="gulpfile.js"><meta name="groc-github-url" content="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jlengstorf/workshop-supercharge-your-front-end-workflow/blob/master/gulpfile.js">gulpfile.js</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="gulpfilejs">gulpfile.js</h1>
 <p>Task runners are designed to handle the boring, repetitive jobs that we, as 
 easily-bored, often-busy developers, tend to forget.</p>
 <p>Fortunately, using task runners is pretty easy, and once it&#39;s set up, <em>you 
@@ -14,7 +14,7 @@ never need to think about it again.</em> Build once, win forever.</p>
     watch: <span class="hljs-string">'./app/public/css/source/**/*.sass'</span> <span class="hljs-comment">// Better LiveReload support.</span>
   },
   scripts: {
-    src: <span class="hljs-string">'./app/public/js/source/**/*.js'</span>,
+    src: [<span class="hljs-string">'./app/public/js/source/**/*.js'</span>, <span class="hljs-string">'!./app/public/js/source/config.EXAMPLE.js'</span>],
     dest: <span class="hljs-string">'./app/public/js/'</span>
   },
   bower_dependencies: {
@@ -52,7 +52,7 @@ never need to think about it again.</em> Build once, win forever.</p>
 <li>Concatenate all scripts into one file</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(concat(<span class="hljs-string">'all.min.js'</span>))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Compress the output for smaller file size</li>
-</ul></div></div><div class="code"><div class="wrapper">    .pipe(uglify())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(uglify({ mangle: <span class="hljs-literal">false</span> }))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Write the sourcemap to the output folder</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.write(<span class="hljs-string">'.'</span>))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Save the new JS file</li>

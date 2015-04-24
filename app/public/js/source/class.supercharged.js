@@ -1,5 +1,5 @@
 /*
- * # The Supercharged Class
+ * # class.supercharged.js
  *
  * This class contains methods and properties relating to the app. They're set 
  * up in a way that allows us to quickly and easily call methods without the 

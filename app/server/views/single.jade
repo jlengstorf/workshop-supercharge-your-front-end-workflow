@@ -1,0 +1,238 @@
+extends ./layouts/default
+
+block title
+    title= title
+
+block content
+  .post
+    h1.post__headline= title
+    p.post__lead
+      | Whenever you write a blog post, the idea is to have as many people read 
+      | it (and &mdash; hopefully &mdash; share it) as possible. But there&rsquo;s more to 
+      | blogging than just writing well. 
+      strong Here are 5 tips for creating killer content for your website.
+    figure
+      img.image--full-width(src='http://s3.copterlabs.com/img/how-to-write-good-blog-posts.jpg' alt="How to Write Good Blog Posts")
+      figcaption There&rsquo;s a lot more to writing online than the words you choose.
+    h2 1. Use Headlines and Formatting (This Is &ldquo;Headline 2&rdquo;)
+    p.
+      Breaking the post into headlines makes it easy to scan, which will 
+      greatly increase the reader&rsquo;s ability to quickly grasp the content of 
+      the article. <strong>More scannable articles are more likely to be 
+      shared.</strong>
+    p.
+      Using headlines &mdash; and subheadlines when necessary &mdash; creates distinctive 
+      sections of a post, and can <em>help the reader quickly get to the parts 
+      of a post that are relevant to their interests.</em>
+    figure.image--align-left
+      img(src="http://s3.copterlabs.com/img/use-formatting.jpg" alt="Use formatting properly")
+      figcaption Formatting can make or break a post.
+    h3 Make Smart Use of Formatting
+    p.
+      When a phrase is important, you want to make sure your reader doesn&rsquo;t 
+      miss it. One way to make text stand out is to <em>add emphasis by 
+      italicizing a phrase.</em>
+    p.
+      You can also <strong>draw attention to important phrases by bolding 
+      them.</strong> Visually, a bolded phrase is more likely to be noticed, 
+      so it also helps to make the post scannable.
+    p.
+      If you <em>really</em> need to make a point, <strong><em>use both bold 
+      and italics to make a sentence jump off the page.</em></strong>
+    h3 Use Common Sense and Don&rsquo;t Overdo It
+    p.
+      Formatting is how you build tone, so <strong>be mindful of your 
+      tone.</strong> Think of each formatting addition as adding a notch more 
+      excitement and force to a statement.
+    p.
+      For example:
+    img.image--align-right(src="http://s3.copterlabs.com/img/formatting-for-tone.jpg" alt="Use formatting to create tone")
+    p.
+      &ldquo;So he told me not to go in there, but I did it anyways.&rdquo;
+    p.
+      Dude.
+    p.
+      &ldquo;Once I got in there, I accidentally knocked over a lamp.&rdquo;
+    p.
+      <em>Dude.</em>
+    p.
+      &ldquo;The lamp broke, and it set the rug on fire.&rdquo;
+    p.
+      <strong>Dude.</strong>
+    p.
+      &ldquo;I tried to put it out, but the jug that I thought was water was 
+      actually lamp oil.&rdquo;
+    p.
+      <strong><em>Dude.</em></strong>
+    p.
+      &ldquo;I haven&rsquo;t gotten the final estimate, but it was something like half a 
+      million dollars in smoke and fire damage.&rdquo;
+    p.
+      <strong><em>DUDE.</em></strong>
+    h3 Too Much Added Emphasis Can Be Overwhelming
+    p.
+      YOU KNOW HOW IT&rsquo;S TOUGH TO READ A POST WHEN IT&rsquo;S WRITTEN IN ALL CAPS WITH TOO MANY PUNCTUATION MARKS?!?!! AND THAT IT ALSO FEELS LIKE YELLING????
+    p.
+      From capitalization and punctuation, to headlines and subheadlines, to italics and bolding, <em>the way you format your posts influences the way that a reader will hear your words.</em>
+    p.
+      <strong>Too much added emphasis can feel like you&rsquo;re yelling.</strong> 
+      Be mindful of how hard you&rsquo;re hitting the reader with those 
+      stand-out phrases.
+    blockquote If you emphasize everything, you&rsquo;ve emphasized nothing.
+    p.
+      A good rule of thumb is to only include one bolded sentence per section. 
+      (A section is created by each headline in the post.) Italics can be used 
+      a little more frequently, but once or twice a section is probably plenty.
+    p.
+      If you have too many strong points in a given section, you may want to 
+      divide it into multiple sections to give each point its due attention.
+    h2 2. Use Photos to Add Visual Impact
+    figure
+      img.image--full-width(src="http://s3.copterlabs.com/img/visually-interesting.jpg" alt="Use photos for visual interest")
+      figcaption Were you skimming? I bet you paused here.
+    p.
+      Whenever possible, include an image to support the point you&rsquo;re making. 
+      For a reader who&rsquo;s skimming an article, the image will provide a natural 
+      place to pause &mdash; use this to your advantage and <strong>place images 
+      next to the most important, useful, and/or shareable bits of your 
+      post</strong> to increase the likelihood that it will be noticed.
+    h3 Don&rsquo;t Steal Photography
+    p.
+      Make sure that the photos you&rsquo;re using are legal to use. You can 
+      <a href="http://www.stocksy.com/">purchase stock photography</a>, which 
+      isn&rsquo;t crazy expensive, or you can look for 
+      <a href="http://bootstrapbay.com/blog/free-stock-photos/">&ldquo;royalty-free&rdquo; 
+      photos</a>.
+    p.
+      Another good resource for photos that are free to use on your blog is 
+      <a href="https://www.flickr.com/creativecommons/">Flickr&rsquo;s Creative 
+      Commons search</a>. Keep in mind that many photos under the Creative 
+      Commons license require attribution to the photographer, so make sure to 
+      add a photo credit if you use them.
+    h2 3. Find Your Ideal Post Length
+    p.
+      It&rsquo;s tempting to keep adding to a post; there&rsquo;s always another anecdote, 
+      fact, or resource that can be included. However, <strong>making an 
+      article too long can have adverse effects on its readability.</strong>
+    blockquote
+      p I would have written a shorter letter, but I didn&rsquo;t have time.
+      p.
+        <strong>Blaise Pascal</strong></blockquote>
+      p.
+        <strong>The ideal length for a blog post varies, but if you fall in 
+        the range of 1,500&ndash;2,500 words, you&rsquo;re probably safe.</strong>
+      h3 Don&rsquo;t Be Afraid to Break a Topic into Multiple Posts
+      p.
+        If the subject you&rsquo;re covering is big, <strong>cover the topic in 
+        multiple posts supporting your main theme.</strong>
+      figure
+        img.image--align-right(src="http://s3.copterlabs.com/img/break-topics-into-multiple-posts.jpg" alt="Break big blog topics into multiple posts")
+        figcaption Break big topics into smaller pieces.
+      p.
+        For example, if you wanted to write about dressing well, you could 
+        potentially cover a lot of ground, including:
+      ul
+        li Basic items of clothing that every person should own
+        li The benefits of tailoring your clothes
+        li A few &ldquo;staple&rdquo; outfits that work in each season
+        li Thoughts on suits, and whether or not you actually need one
+        li How different shoes affect an outfit
+        li When &mdash; and how &mdash; to accessorize
+        li How to look sharp without spending a ton of time and money on fashion
+      p.
+        By making each of these points an individual post rather than a 
+        section in a long post, you have more content for your blog. This not 
+        only 
+        <a href="http://www.quicksprout.com/2014/03/31/how-long-should-each-blog-post-be-a-data-driven-answer/">keeps 
+        posts at an ideal length</a>, but <em>having multiple posts on a topic 
+        establishes your position as an expert on the topic.</em>
+      h3 Create Links for Deeper Exploration
+      p.
+        Does something you&rsquo;re saying relate to another post you&rsquo;ve written? 
+        <strong>Add a link to your earlier post so the reader can get more 
+        information.</strong>
+      p.
+        Beyond being helpful to the reader, <em>linking to your related blog 
+        posts also boosts engagement and helps your search engine rankings.</em>
+      h2 4. Pay Attention to the Details
+      p.
+        While you don&rsquo;t want to get bogged down in the minutiae, it&rsquo;s 
+        definitely important to pay attention to the small details. After all, 
+        it&rsquo;s the details that add polish and make the content really stand out.
+      h3 Don&rsquo;t Discount Spelling and Grammar
+      img.image--align-right(src="http://s3.copterlabs.com/img/proofread-your-post.jpg" alt="Proofread your post")
+      p.
+        If your posts are riddled with errors, it looks sloppy and damages 
+        your credibility &mdash; this reflects poorly on your business, and can have 
+        a negative impact on shares and conversions.
+      p.
+        The occasional typo is inevitable. But avoid the big mistakes &mdash; mixing 
+        up &ldquo;your&rdquo; and &ldquo;you&rsquo;re&rdquo;, for example &mdash; and <em>take advantage of tools 
+        like a spell checker.</em>
+      p.
+        For bonus points, <strong>read what you&rsquo;ve written out loud</strong> 
+        to see if anything sounds odd when you hear it.
+      h3 Write a Good Excerpt &amp; Meta Description
+      p.
+        When someone shares your article, most social media sites will display 
+        the title of the post along with the 
+        <a href="http://moz.com/learn/seo/meta-description">meta description</a>.
+      blockquote.twitter-tweet(lang="en").
+        p.
+          By valuing time over output, businesses unwittingly punish their 
+          most productive employees and reward the slackers. 
+          <a href="http://t.co/60FRWLAYsa">http://t.co/60FRWLAYsa</a>
+        p.
+          &mdash; Mike Stichling (@MikeStichling)
+          <a href="https://twitter.com/MikeStichling/status/590820611913572352">April 22, 2015</a>
+      script(async src="//platform.twitter.com/widgets.js" charset="utf-8")
+      p.
+        <strong>A good meta description will give the reader an idea of what 
+        the post is about, and will ideally spark their curiosity to 
+        read more.</strong>
+      p.
+        Make sure you set the post&rsquo;s meta description; if you don&rsquo;t, the first 
+        few words of your post will be used. While that sometimes works, more 
+        often than not the first few words will fall a little short as a call 
+        to action for the post.
+      h2 5. End with a Text-Based Call to Action
+      img.image--full-width(src="http://s3.copterlabs.com/img/ready-for-more.jpg" alt="Use images for calls to action")
+      p.
+        Creating a call to action at the end of a blog post that gives a 
+        <em>logical next action</em> is a great way to keep your readers 
+        engaged. This can be anything that you want it to be: a request to 
+        share the post, a nudge to get on the newsletter list for updates, a 
+        recommendation for a paid product or service.
+      h3 Shouldn&rsquo;t I Use a Banner to Make the Call to Action Stand Out More?
+      p.
+        People tend to ignore banners, sidebars, pop-overs &mdash; pretty much 
+        anything that looks like an ad. However, if you&rsquo;re providing 
+        information that the reader finds useful, they&rsquo;ll want to learn more.
+      p.
+        <strong>A risk that you run using a pop-over, banner, or sidebar ad is 
+        that they tend to feel tacked-on</strong>; it&rsquo;s the same on every 
+        page, so it&rsquo;s easy to ignore it as an unrelated part of the website.
+      h3 Text-Based Calls to Action Feel More Relevant
+      p.
+        A text-based call to action isn&rsquo;t separated from the content of the 
+        post, and &mdash; done well &mdash; it has a clear connection to the content of 
+        the post.
+      p.
+        It takes a little more time to hand-craft the call to action for each 
+        post, but <strong>a hand-crafted, text-based call to action feels less 
+        like an ad and more like what it should be: <em>a recommendation for 
+        what to do next in order to learn more.</em></strong>
+      p.
+        Because of this, it&rsquo;s far more likely that the reader will actually 
+        <em>read</em> the offer and potentially take action.
+      h2 Do You Want to Get Better at Writing?
+      p.
+        If you&rsquo;d like to get <strong>hands-on help with your writing,</strong> 
+        I can help. I&rsquo;ll edit one or two of your posts, then go through them 
+        with you to discuss what you&rsquo;re doing well, as well as pointing out 
+        areas where the posts could be edited for a bigger impact.
+      p.
+        To learn more, or to get started, 
+        <a href="http://lengstorf.com/contact/">contact me today</a>.
+
+block appscripts

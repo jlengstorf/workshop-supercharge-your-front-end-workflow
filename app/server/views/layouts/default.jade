@@ -4,6 +4,7 @@ html(lang="en")
     block title
         title Supercharge Your Front-End Workflow
     // bower:css
+    link(rel='stylesheet', href='/vendor/fontawesome/css/font-awesome.css')
     // endbower
     link(rel="stylesheet" href="/css/all.min.css")
   body
@@ -12,6 +13,7 @@ html(lang="en")
       block content
     include ../partials/_footer
     // bower:js
+    script(src='/vendor/mustache/mustache.js')
     script(src='/vendor/bows/dist/bows.js')
     // endbower
     script(src='/js/all.min.js')

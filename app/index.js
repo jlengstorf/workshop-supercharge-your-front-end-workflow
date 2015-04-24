@@ -1,5 +1,4 @@
-// # Supercharge Your Front-End Workflow
-
+// # index.js
 // This app is built with Express for easy routing and templating
 var express = require('express');
 var app = express();
@@ -21,12 +20,8 @@ app.title = 'Supercharge Your Front-End Workflow';
 app.blogs = [
   {
     title: 'Keffiyeh raw denim sustainable',
-    image: 'http://placehold.it/300x300',
+    image: '/img/blog-image01.jpg',
     excerpt: 'Cray four loko gentrify, High Life Echo Park disrupt ' +
-             'paleo Shoreditch Neutra put a bird on it tilde occupy ' +
-             'cardigan wolf keytar. Artisan YOLO trust fund meditation ' +
-             'literally PBR.',
-    content: 'Cray four loko gentrify, High Life Echo Park disrupt ' +
              'paleo Shoreditch Neutra put a bird on it tilde occupy ' +
              'cardigan wolf keytar. Artisan YOLO trust fund meditation ' +
              'literally PBR.',
@@ -34,12 +29,8 @@ app.blogs = [
   },
   {
     title: 'Intelligentsia wayfarers iPhone',
-    image: 'http://placehold.it/300x300',
+    image: '/img/blog-image02.jpg',
     excerpt: 'Gluten-free trust fund sartorial pork belly literally. ' +
-             'Yr hoodie swag, cornhole salvia gastropub locavore next ' +
-             'level iPhone fingerstache. PBR&B disrupt High Life, ' +
-             'locavore drinking vinegar meggings mlkshk 3 wolf moon.',
-    content: 'Gluten-free trust fund sartorial pork belly literally. ' +
              'Yr hoodie swag, cornhole salvia gastropub locavore next ' +
              'level iPhone fingerstache. PBR&B disrupt High Life, ' +
              'locavore drinking vinegar meggings mlkshk 3 wolf moon.',
@@ -47,12 +38,8 @@ app.blogs = [
   },
   {
     title: 'Art party Brooklyn listicle',
-    image: 'http://placehold.it/300x300',
+    image: '/img/blog-image03.jpg',
     excerpt: 'Heirloom banh mi narwhal chambray. Neutra Echo Park ' +
-             'flannel, health goth pug keytar Blue Bottle chia art ' +
-             'party pickled twee Vice. Plaid photo booth next level ' +
-             'sriracha hoodie gastropub, gluten-free Carles freegan.',
-    content: 'Heirloom banh mi narwhal chambray. Neutra Echo Park ' +
              'flannel, health goth pug keytar Blue Bottle chia art ' +
              'party pickled twee Vice. Plaid photo booth next level ' +
              'sriracha hoodie gastropub, gluten-free Carles freegan.',
@@ -94,6 +81,31 @@ app.get('/(([a-z]+))/', function( req, res) {
       res.end(html);
     }
   });
+});
+
+// For blog posts, we use the slug to identify the post.
+// However, to keep this app front-end only, we're using hard-coded content.
+app.get('/blog/:slug/', function( req, res ) {
+
+  var slug = req.params.slug,
+      post = {};
+
+  // - Loop through the blog posts to find the one matching the slug
+  app.blogs.some(function( blog ) {
+    var permalink = '/blog/' + slug + '/';
+    if (blog.permalink===permalink) {
+      post = blog;
+    }
+  });
+
+  res.render('single', post, function( err, html) {
+    if (err) {
+      res.redirect('/404/');
+    } else {
+      res.end(html);
+    }
+  });
+
 });
 
 // Static files are all stored in the `public` dir

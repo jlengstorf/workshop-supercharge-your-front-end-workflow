@@ -1,5 +1,5 @@
 /*
- * # Task Automation Using Gulp
+ * # gulpfile.js
  *
  * Task runners are designed to handle the boring, repetitive jobs that we, as 
  * easily-bored, often-busy developers, tend to forget.
@@ -26,7 +26,7 @@ var paths = {
     watch: './app/public/css/source/**/*.sass' // Better LiveReload support.
   },
   scripts: {
-    src: './app/public/js/source/**/*.js',
+    src: ['./app/public/js/source/**/*.js', '!./app/public/js/source/config.EXAMPLE.js'],
     dest: './app/public/js/'
   },
   bower_dependencies: {
@@ -95,7 +95,7 @@ gulp.task('scripts', function(  ) {
     .pipe(concat('all.min.js'))
 
     // - Compress the output for smaller file size
-    .pipe(uglify())
+    .pipe(uglify({ mangle: false }))
 
     // - Write the sourcemap to the output folder
     .pipe(sourcemaps.write('.'))

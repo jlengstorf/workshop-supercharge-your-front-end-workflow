@@ -13,13 +13,10 @@
     "**/.*",
     "doc",
     "node_modules",
-    "bower_components"
+    "app/public/vendor"
   ],
   "devDependencies": {
-    "bows": "~1.4.2"
   },
   "dependencies": {
-    "mustache": "~2.0.0",
-    "fontawesome": "~4.3.0"
   }
 }

@@ -7,6 +7,7 @@
   'use strict';
 
   // ## Create a constructor
+
   // The constructor for the `SuperchargedInstagram` class sets up config data.
   function SuperchargedInstagram( options ) {
 
@@ -39,6 +40,7 @@
   });
 
   // ## Load user media
+
   // Create a request for the specified user's photos
   SuperchargedInstagram.prototype.loadRecentMedia = function(  ) {
 
@@ -56,6 +58,8 @@
   };
 
   // ## Handle the JSON response
+
+  // Parse the returned JSON in a format usable by our template.
   SuperchargedInstagram.prototype.handleJSON = function( response ) {
 
     // - Make the `this` accessible inside the `forEach` loop

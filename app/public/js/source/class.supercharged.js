@@ -48,6 +48,8 @@
   });
 
   // ## Load a URL via AJAX
+
+  // Send a request to load a document as either plain text or JSON
   Supercharged.prototype.loadURL = function( url, successCB, errorCB, loadJSON ) {
 
     // - Set up an `XMLHttpRequest` object (Look Ma! No jQuery!)
@@ -99,6 +101,7 @@
   };
 
   // ## Load data via JSONP
+
   // For sites without CORS headers, we use JSONP as a workaround
   Supercharged.prototype.loadJSONP = function( url, successCB ) {
 
@@ -132,6 +135,7 @@
   };
 
   // ## Process a template
+
   // Load a Mustache template and process it with template variables
   Supercharged.prototype.renderTemplate = function( template, templateVars, callback ) {
     var self = this,
@@ -163,6 +167,7 @@
   };
 
   // ## Add markup to the DOM
+
   // Add the rendered template markup to the DOM inside a specified element
   Supercharged.prototype.addToDOM = function( markup ) {
 

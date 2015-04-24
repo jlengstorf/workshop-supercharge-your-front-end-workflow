@@ -9,6 +9,7 @@
   var config = window.APP_CONFIG;
 
   // ## Set up the Instagram photo loader
+
   // - Create config options for the Supercharged class
   var ig_config = {
     debug: true,
@@ -26,6 +27,7 @@
 
 
   // ## Set up the Facebook album loader
+
   // - Create config options for the SuperchargedFacebook class
   var fb_config = {
     debug: true,

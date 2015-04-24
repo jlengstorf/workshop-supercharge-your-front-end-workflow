@@ -1,19 +1,46 @@
 /*
- * # JavaScript
- *
- * 
+ * # main.js
+ * This script initializes all functionality for the app.
  */
 (function(  ) {
   'use strict';
 
-  // - Create config options for the Supercharged class
-  var options = {
-      debug: true //   - Debug mode is true for development
+  // - Load config variables
+  var config = window.APP_CONFIG;
+
+  // - Set up the Instagram photo loader
+  //   - Create config options for the Supercharged class
+  var ig_config = {
+    debug: true,
+    userID: config.instagram.userID,
+    token: config.instagram.token,
+    container: '.photo-viewer--instagram',
+    template: '/partials/instagram.mustache'
   };
 
-  // - Create a new instance of the Supercharged class
-  var supercharged = new Supercharged(options);
+  //   - Create a new instance of the SuperchargedInstagram class
+  var instagram = new SuperchargedInstagram(ig_config);
 
-  supercharged.log('Log testing.');
+  //   - Load recent photos from Instagram
+  instagram.loadRecentMedia();
 
-})();
+
+  // - Set up the Facebook album loader
+  //   - Create config options for the SuperchargedFacebook class
+  var fb_config = {
+    debug: true,
+    albumID: config.facebook.albumID,
+    token: config.facebook.token,
+    container: '.photo-viewer--facebook',
+    template: '/partials/facebook.mustache',
+    photosToDisplay: 8 //   - Limit the number of photos to display
+
+  };
+
+  //   - Create a new instance of the SuperchargedFacebook class
+  var facebook = new SuperchargedFacebook(fb_config);
+
+  //   - Load photos from the Facebook Album
+  facebook.loadRecentMedia();
+
+}).call();

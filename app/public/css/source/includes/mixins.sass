@@ -1,10 +1,7 @@
-/*
- * # Mixins
- *
- * These are reusable styles for quick use within the app.
- */
+// # mixins.sass
+// These are reusable styles for quick use within the app.
 
-// ## Effects Mixins
+// ## Effects
 
 // ### Hover Effect
 // Uses pseudo-elements to create an animated on and off state for elements
@@ -35,10 +32,7 @@
     height: 46%
     background-color: rgba(240, 105, 130, 0.6)
     border-radius: 55%
-    -webkit-transform-origin: 97% 99%
-    -ms-transform-origin: 97% 99%
     transform-origin: 97% 99%
-    -webkit-animation: spin 15s linear infinite
     animation: spin 15s linear infinite
     z-index: 8
 
@@ -73,7 +67,36 @@
       text-indent: 1em
 
 
-// ## Utility Mixins
+// ## Typography
+
+// ### Adjust the font sizes and settings
+=setFontSizes( $fontSize )
+
+  // - Set the font baseline site-wide
+  body
+    font-size: $fontSize
+    line-height: setLineHeight($fontSize)
+
+  // - Increase font size for leads and blockquotes
+  blockquote,.post__lead
+    font-size: $fontSize * 1.125
+    line-height: setLineHeight($fontSize*1.125)
+
+  // - Reset heading sizes (for proper line-height)
+  +setHeadingSize($fontSize)
+
+
+// ### Calculate heading font sizes
+// Using a loop, call the `set-heading-size()` function and set heading sizes.
+=setHeadingSize( $fontSize )
+  @for $i from 1 through 6
+    h#{$i}
+      $headingSize: getHeadingSize($i)
+      font-size: $headingSize
+      line-height: setLineHeight($headingSize)
+
+
+// ## Utilities
 
 // ### Clearfix
 // Avoids floated elements going outside their container elements. This 

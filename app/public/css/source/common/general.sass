@@ -1,8 +1,5 @@
-/*
- * # General Site Styles
- * These are styles that apply to the whole site.
- */
-
+// # general.sass
+// These are styles that apply to the whole site.
 *
   box-sizing: border-box;
   margin: 0
@@ -14,7 +11,7 @@
 
 body
   margin: 0
-  padding-top: $vertUnit*2.5
+  padding-top: $vertUnit*2.5 // - Keep content from hitting the header
 
 // This container wraps all content except the header and footer.
 .main-content
@@ -35,6 +32,31 @@ body
 // Forces an image to float center
 .image--full-width
   @extend .image
-  max-width: $maxWidth
+  width: $maxWidth
   margin-left: auto
   margin-right: auto
+
+// This is a placeholder class. It can only be extended and won't be included 
+// in the final CSS file.
+%image--float
+  max-width: 35%
+  margin-bottom: $vertUnit
+
+  img
+    max-width: 100%
+
+// Floats an image to the left
+.image--align-left
+  @extend .image
+  @extend %image--float
+  float: left
+  margin-right: $vertUnit
+  margin-left: 0
+
+// Floats an image to the right
+.image--align-right
+  @extend .image
+  @extend %image--float
+  float: right
+  margin-left: $vertUnit
+  margin-right: 0

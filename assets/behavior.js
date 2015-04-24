@@ -825,7 +825,60 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                         "projectPath": "app/public/css/source/main.sass",
                         "targetPath": "app/public/css/source/main",
                         "pageTitle": "app/public/css/source/main",
-                        "title": "main"
+                        "firstHeader": {
+                          "type": "heading",
+                          "data": {
+                            "level": 1,
+                            "title": "main.sass",
+                            "slug": "mainsass",
+                            "isFileHeader": true
+                          },
+                          "depth": 1,
+                          "children": [
+                            {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Variables",
+                                "slug": "variables"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Fonts",
+                                "slug": "fonts"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Shared Resources",
+                                "slug": "shared-resources"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Common Styles",
+                                "slug": "common-styles"
+                              },
+                              "depth": 2
+                            }, {
+                              "type": "heading",
+                              "data": {
+                                "level": 2,
+                                "title": "Layouts",
+                                "slug": "layouts"
+                              },
+                              "depth": 2
+                            }
+                          ]
+                        },
+                        "title": "main.sass"
                       },
                       "depth": 5,
                       "outline": [

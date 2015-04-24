@@ -1,9 +1,11 @@
 // # mixins.sass
+
 // These are reusable styles for quick use within the app.
 
 // ## Effects
 
 // ### Hover Effect
+
 // Uses pseudo-elements to create an animated on and off state for elements
 =hoverEffect(  )
   &::before,&::after
@@ -52,7 +54,9 @@
       width: 110%
       height: 104%
 
+
 // ### Add Columns
+
 // Makes any container a newspaper-style layout with justified text and 
 // columns. Pass the number of columns as an argument.
 =add-columns( $columnCount: 2 )
@@ -70,6 +74,9 @@
 // ## Typography
 
 // ### Adjust the font sizes and settings
+
+// By setting this up as a mixin, it's easy to create relative sizes at 
+// various media breakpoints.
 =setFontSizes( $fontSize )
 
   // - Set the font baseline site-wide
@@ -87,6 +94,7 @@
 
 
 // ### Calculate heading font sizes
+
 // Using a loop, call the `set-heading-size()` function and set heading sizes.
 =setHeadingSize( $fontSize )
   @for $i from 1 through 6
@@ -99,6 +107,7 @@
 // ## Utilities
 
 // ### Clearfix
+
 // Avoids floated elements going outside their container elements. This 
 // version is based on [Chris Coyier's recommendation](http://bit.ly/1F6f4Sm).
 =clearfix(  )

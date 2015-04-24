@@ -1,14 +1,18 @@
 // # functions.sass
+
 // These functions are used to calculate values for better styles.
 
 // ## Typography Functions
 
 // ### Determine the proper heading size
+
 // Returns the proper heading size in `em` for a given heading level.
 @function getHeadingSize( $headingLevel )
   @return 1em * (1 + (6 - $headingLevel) * .125)
 
+
 // ### Calculate the correct line-height
+
 // Based on an element's font size, calculates line-height based on the 
 // vertical grid unit (`$vertUnit`).
 @function setLineHeight( $fontSize )

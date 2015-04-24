@@ -1,4 +1,5 @@
 // # blog.sass
+
 .blog-preview
   +clearfix
   margin: 0
@@ -6,7 +7,7 @@
   border-bottom: 1px solid $text
 
 .blog-preview__image
-  // - See the mixins file for how `hoverEffect` works
+  // See the mixins file for how `hoverEffect` works.
   +hoverEffect
   float: left
   position: relative
@@ -32,7 +33,7 @@
     text-decoration: none
 
 .blog-preview__excerpt
-  // - SASS supports inline math
+  // SASS supports inline math.
   margin-top: $vertUnit/4
 
 .blog-preview__morelink
@@ -40,12 +41,12 @@
 
 
 .latest-posts__wrapper
-  // - Flexbox, because we're all developers and use browsers that support it
+  // Flexbox, because we're all developers and use browsers that support it.
   display: flex
   flex-wrap: space-between
 
 .blog-preview--mini
-  // - To avoid reinventing this style, simply extend and modify as needed
+  // To avoid reinventing this style, simply extend and modify as needed.
   @extend .blog-preview
   flex: 1 33%
   padding: $vertUnit

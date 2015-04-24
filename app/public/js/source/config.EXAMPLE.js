@@ -1,14 +1,14 @@
-/*
- * # config.js
- * This file sets up config data for use within the app.
- */
+// # config.js
+
+// This file sets up config data for use within the app.
+
 (function(  ) {
   'use strict';
 
   window.APP_CONFIG = {
     instagram: {
 
-      // - [Find a user ID](http://jelled.com/instagram/lookup-user-id)
+      // - [Find your user ID](http://jelled.com/instagram/lookup-user-id)
       userID: 'YOUR_IG_USER_ID_HERE',
 
       // - [Get a token](https://instagram.com/developer/api-console/)
@@ -17,7 +17,7 @@
     },
     facebook: {
 
-      // - [Get an album ID](http://bit.ly/1yTm0RI)
+      // - [Find an album ID](http://bit.ly/1yTm0RI)
       albumID: 'YOUR_FB_ALBUM_ID_HERE',
 
       // - [Get a token](http://bit.ly/1DgCkqZ)

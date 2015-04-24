@@ -1,4 +1,5 @@
 // # typography.sass
+
 // Site-wide rules to affect typography on different viewport sizes.
 body
   background: $light
@@ -7,8 +8,8 @@ body
   font-size: $defaultFontSize
   font-weight: $defaultFontWeight
   line-height: 1.375
-  // - Enables better kerning and (where available) ligatures
-  //   - Not advisable on large projects; target individual sections instead
+  // Enables better kerning and (where available) ligatures.
+  // - Not advisable on large projects; target individual sections instead
   text-rendering: optimizeLegibility
 
 h1,h2,h3,h4,h5,h6
@@ -22,7 +23,7 @@ strong
 blockquote
   color: lighten($text, 20%)
 
-// - See the mixins file for how `setFontSizes` works
+// See the mixins file for how `setFontSizes` works.
 +setFontSizes(16px)
 
 @media screen and (min-width: 480px)

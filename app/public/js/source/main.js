@@ -1,11 +1,11 @@
-/*
- * # main.js
- * This script initializes all functionality for the app.
- */
+// # main.js
+
+// This script initializes all functionality for the app.
+
 (function(  ) {
   'use strict';
 
-  // - Load config variables
+  // Load config variables.
   var config = window.APP_CONFIG;
 
   // ## Set up the Instagram photo loader
@@ -43,7 +43,7 @@
   // - Create a new instance of the SuperchargedFacebook class
   var facebook = new SuperchargedFacebook(fb_config);
 
-  // - Load photos from the Facebook Album
+  // - Load photos from the Facebook album
   facebook.loadRecentMedia();
 
 }).call();

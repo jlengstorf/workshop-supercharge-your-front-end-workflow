@@ -1,22 +1,26 @@
-/*
- * # App Styles
- */
+// # main.sass
+// This sheet is only used to import the required stylesheets. Since CSS 
+// cascades, order is important to ensure proper styling.
 
 // ## Variables
+
 // Style variables are all kept in one place for easy editing.
 @import includes/variables
 
 // ## Fonts
+
 // Fonts are loaded from [Google Fonts](http://www.google.com/fonts)
 @import url("//fonts.googleapis.com/css?family=#{$importFontFamily}");
 
 // ## Shared Resources
+
 // Mixins and animations are shared by all stylesheets
 @import includes/animations
 @import includes/functions
 @import includes/mixins
 
 // ## Common Styles
+
 // Styles that affect all pages and layouts
 @import common/general
 @import common/typography
@@ -24,6 +28,7 @@
 @import common/footer
 
 // ## Layouts
+
 // Styles are separated out by layout for easy editing.
 @import layouts/home
 @import layouts/blog

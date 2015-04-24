@@ -1,14 +1,14 @@
-/*
- * # class.supercharged.js
- *
- * This class contains methods and properties relating to the app. They're set 
- * up in a way that allows us to quickly and easily call methods without the 
- * need to remember lots of parameters.
- */
+// # class.supercharged.js
+
+// This class contains methods and properties relating to the app. They're set 
+// up in a way that allows us to quickly and easily call methods without the 
+// need to remember lots of parameters.
+
 (function () {
   'use strict';
 
   // ## Add a constructor
+
   function Supercharged( options ) {
 
     // - Check for user-supplied options and use an empty object if none exists

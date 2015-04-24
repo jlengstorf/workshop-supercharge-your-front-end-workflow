@@ -1,8 +1,8 @@
-/*
- * # class.superchargedfacebook.js
- * This class loads a given photo album from Facebook and renders photos with 
- * Mustache templates.
- */
+// # class.superchargedfacebook.js
+
+// This class loads a given photo album from Facebook and renders photos with 
+// Mustache templates.
+
 (function () {
   'use strict';
 

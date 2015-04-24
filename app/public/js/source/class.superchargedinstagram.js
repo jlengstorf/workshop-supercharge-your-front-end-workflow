@@ -1,8 +1,8 @@
-/*
- * # class.superchargedinstagram.js
- * This class loads a given user's recent Instagram posts and displays them on 
- * the page using Mustache templates.
- */
+// # class.superchargedinstagram.js
+
+// This class loads a given user's recent Instagram posts and displays them on 
+// the page using Mustache templates.
+
 (function () {
   'use strict';
 

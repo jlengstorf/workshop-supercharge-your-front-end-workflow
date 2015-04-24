@@ -8,6 +8,7 @@
 (function () {
   'use strict';
 
+  // ## Add a constructor
   function Supercharged( options ) {
 
     // - Check for user-supplied options and use an empty object if none exists
@@ -46,7 +47,7 @@
     }
   });
 
-  // Loads a URL via AJAX
+  // ## Load a URL via AJAX
   Supercharged.prototype.loadURL = function( url, successCB, errorCB, loadJSON ) {
 
     // - Set up an `XMLHttpRequest` object (Look Ma! No jQuery!)
@@ -97,33 +98,40 @@
 
   };
 
+  // ## Load data via JSONP
   // For sites without CORS headers, we use JSONP as a workaround
   Supercharged.prototype.loadJSONP = function( url, successCB ) {
 
-    // - Create a unique callback function to handle the response
-    //   - Create an empty array with one element
+    // ### Create a unique callback function to handle the response
+    // - Create an empty array with one element
     var random = new Uint32Array(1);
 
-    //   - Generate a random value and fill the new array
+    // - Generate a random value and fill the new array
     window.crypto.getRandomValues(random);
 
-    //   - Generate a unique name for the callback using the random value
+    // - Generate a unique name for the callback using the random value
     var cbName = 'cb' + random[0];
 
-    //   - Create a function to act as the the JSONP callback
+    // - Create a function to act as the the JSONP callback
     window[cbName] = function( data ) {
       if (typeof successCB==='function') {
         successCB(data);
       }
     };
 
-    // - Create a script and load the URL with a reference to our callback
+    // ### Embed the script
+    // - Create a script
     var jsonp = document.createElement('script');
+
+    // - Set the src to the target URL with a reference to our callback
     jsonp.src = url + '&callback=' + cbName;
+
+    // - Inject the new script into the DOM to load it
     document.head.appendChild(jsonp);
 
   };
 
+  // ## Process a template
   // Load a Mustache template and process it with template variables
   Supercharged.prototype.renderTemplate = function( template, templateVars, callback ) {
     var self = this,
@@ -141,8 +149,8 @@
     // - Make sure the template is set
     if (!!template) {
 
-      // - Load the template and specify success and failure callbacks
-      //   - Templates should not be loaded as JSON, so set `loadJSON` to `false` 
+      // ### Load the template and specify success and failure callbacks
+      // - Templates should not be loaded as JSON, so set `loadJSON` to `false` 
       this.loadURL(template, success, this.handleError, false);
 
     } else {
@@ -154,6 +162,7 @@
 
   };
 
+  // ## Add markup to the DOM
   // Add the rendered template markup to the DOM inside a specified element
   Supercharged.prototype.addToDOM = function( markup ) {
 
@@ -175,7 +184,7 @@
 
   };
 
-  // Handle application errors
+  // ## Handle application errors
   Supercharged.prototype.handleError = function( error ) {
 
     // - For lack of better error handling, simply log errors for now

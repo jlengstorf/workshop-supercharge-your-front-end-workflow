@@ -6,6 +6,7 @@
 (function () {
   'use strict';
 
+  // ## Create a constructor
   // The constructor for the `SuperchargedFacebook` class sets up config data.
   function SuperchargedFacebook( options ) {
 
@@ -37,6 +38,7 @@
     }
   });
 
+  // ## Load user media
   // Create a request for the specified album's photos
   SuperchargedFacebook.prototype.loadRecentMedia = function(  ) {
 
@@ -53,7 +55,7 @@
 
   };
 
-  // Handles the sorting of Facebook's JSON response
+  // ## Handle the JSON response
   SuperchargedFacebook.prototype.handleJSON = function( response ) {
 
     // - Make the `this` accessible inside the `forEach` loop

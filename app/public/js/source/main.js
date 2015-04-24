@@ -8,7 +8,7 @@
   // - Load config variables
   var config = window.APP_CONFIG;
 
-  // - Set up the Instagram photo loader
+  // ## Set up the Instagram photo loader
   // - Create config options for the Supercharged class
   var ig_config = {
     debug: true,
@@ -25,7 +25,7 @@
   instagram.loadRecentMedia();
 
 
-  // - Set up the Facebook album loader
+  // ## Set up the Facebook album loader
   // - Create config options for the SuperchargedFacebook class
   var fb_config = {
     debug: true,

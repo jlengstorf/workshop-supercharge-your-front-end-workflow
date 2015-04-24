@@ -9,7 +9,7 @@
   var config = window.APP_CONFIG;
 
   // - Set up the Instagram photo loader
-  //   - Create config options for the Supercharged class
+  // - Create config options for the Supercharged class
   var ig_config = {
     debug: true,
     userID: config.instagram.userID,
@@ -18,29 +18,30 @@
     template: '/partials/instagram.mustache'
   };
 
-  //   - Create a new instance of the SuperchargedInstagram class
+  // - Create a new instance of the SuperchargedInstagram class
   var instagram = new SuperchargedInstagram(ig_config);
 
-  //   - Load recent photos from Instagram
+  // - Load recent photos from Instagram
   instagram.loadRecentMedia();
 
 
   // - Set up the Facebook album loader
-  //   - Create config options for the SuperchargedFacebook class
+  // - Create config options for the SuperchargedFacebook class
   var fb_config = {
     debug: true,
     albumID: config.facebook.albumID,
     token: config.facebook.token,
     container: '.photo-viewer--facebook',
     template: '/partials/facebook.mustache',
-    photosToDisplay: 8 //   - Limit the number of photos to display
+    // - Limit the number of photos to display
+    photosToDisplay: 8
 
   };
 
-  //   - Create a new instance of the SuperchargedFacebook class
+  // - Create a new instance of the SuperchargedFacebook class
   var facebook = new SuperchargedFacebook(fb_config);
 
-  //   - Load photos from the Facebook Album
+  // - Load photos from the Facebook Album
   facebook.loadRecentMedia();
 
 }).call();

@@ -1,4 +1,4 @@
-Workshop: Supercharge Your Front-End Workflow
+Supercharge Your Front-End Workflow
 ===============================================================================
 
 In order to optimise your workflow you need to master the tools to do it right.

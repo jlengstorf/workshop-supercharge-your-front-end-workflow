@@ -8,6 +8,15 @@ concentrate on what truly matters! Whether you're a designer or a developer,
 these tools don't need to be scary and can save you *hours* in the long run.
 
 
+Quick Start
+-------------------------------------------------------------------------------
+
+For a quick look at what the completed app looks like, check out the `complete`
+branch. The source is also thoroughly commented, and 
+[Groc](https://github.com/nevir/groc) was used to generate 
+[the documentation](http://git.io/vff2n).
+
+
 What You'll Learn
 -------------------------------------------------------------------------------
 

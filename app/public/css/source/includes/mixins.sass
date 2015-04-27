@@ -89,6 +89,11 @@
     font-size: $fontSize * 1.125
     line-height: setLineHeight($fontSize*1.125)
 
+  // - Decrease font size for small tags and figcaptions
+  small,figcaption
+    font-size: $fontSize * 0.75
+    line-height: setLineHeight($fontSize*0.75)
+
   // - Reset heading sizes (for proper line-height)
   +setHeadingSize($fontSize)
 

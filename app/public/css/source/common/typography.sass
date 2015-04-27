@@ -4,9 +4,11 @@
 body
   background: $light
   color: $text
-  font-family: $defaultFontFamily
-  font-size: $defaultFontSize
-  font-weight: $defaultFontWeight
+  // Property groups that are prefixed can be nested for convenience
+  font:
+    family: $defaultFontFamily
+    size: $defaultFontSize
+    weight: $defaultFontWeight
   line-height: 1.375
   // Enables better kerning and (where available) ligatures.
   // - Not advisable on large projects; target individual sections instead
@@ -14,14 +16,27 @@ body
 
 h1,h2,h3,h4,h5,h6
   color: $dark
-  font-family: $headingFontFamily
-  font-weight: $headingFontWeight
+  font:
+    family: $headingFontFamily
+    weight: $headingFontWeight
 
 strong
   color: $dark
 
 blockquote
   color: lighten($text, 20%)
+  border:
+    top: 1px solid darken($light, 10%)
+    bottom: 1px solid darken($light, 10%)
+  margin:
+    left: -1 * $vertUnit
+    right: -1 * $vertUnit
+  padding: $vertUnit
+
+figcaption
+  color: lighten($text, 20%)
+  font-style: italic
+  margin-top: $vertUnit / 4
 
 // See the mixins file for how `setFontSizes` works.
 +setFontSizes(16px)

@@ -10,11 +10,12 @@ never need to think about it again.</em> Build once, win forever.</p>
 <p>To install a module that&#39;s used throughout the app, use <code>--save</code> instead.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For easy reference, declare all filepaths in one place.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> paths = {
   styles: {
     src: <span class="hljs-string">'./app/public/css/source/main.sass'</span>,
-    dest: <span class="hljs-string">'./app/public/css/'</span>,
-    watch: <span class="hljs-string">'./app/public/css/source/**/*.sass'</span> <span class="hljs-comment">// Better LiveReload support.</span>
+    dest: <span class="hljs-string">'./app/public/css/'</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Watch all Sass files for better LiveReload functionality.</p></div></div><div class="code"><div class="wrapper">    watch: <span class="hljs-string">'./app/public/css/source/**/*.sass'</span>
   },
   scripts: {
-    src: [<span class="hljs-string">'./app/public/js/source/**/*.js'</span>, <span class="hljs-string">'!./app/public/js/source/config.EXAMPLE.js'</span>],
+    src: [
+      <span class="hljs-string">'./app/public/js/source/**/*.js'</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Don&#39;t include the example file in the output</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-string">'!./app/public/js/source/config.EXAMPLE.js'</span>
+    ],
     dest: <span class="hljs-string">'./app/public/js/'</span>
   },
   bower_dependencies: {
@@ -29,7 +30,11 @@ never need to think about it again.</em> Build once, win forever.</p>
 <li>Create a source map for easier development</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(sourcemaps.init())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Compile SASS files into CSS</li>
-</ul></div></div><div class="code"><div class="wrapper">    .pipe(sass({ outputStyle: <span class="hljs-string">'compressed'</span>, indentedSyntax: <span class="hljs-literal">true</span>, errLogToConsole: <span class="hljs-literal">true</span> }))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
+</ul></div></div><div class="code"><div class="wrapper">    .pipe(sass({
+      outputStyle: <span class="hljs-string">'compressed'</span>,
+      indentedSyntax: <span class="hljs-literal">true</span>,
+      errLogToConsole: <span class="hljs-literal">true</span>
+    }))</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Use Autoprefixer to add vendor prefixes automatically</li>
 </ul></div></div><div class="code"><div class="wrapper">    .pipe(autoprefixer())</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><ul>
 <li>Rename the processed CSS</li>

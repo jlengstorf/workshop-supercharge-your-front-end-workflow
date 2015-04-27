@@ -145,7 +145,7 @@
           // - After successfully loading the template, render it with Mustache
           var markup = Mustache.render(template, templateVars);
 
-          // - Call the given callback function to do something with the markup
+          // - Fire the given callback function to do something with the markup
           cb(markup);
 
         };

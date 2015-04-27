@@ -23,10 +23,15 @@ var paths = {
   styles: {
     src: './app/public/css/source/main.sass',
     dest: './app/public/css/',
-    watch: './app/public/css/source/**/*.sass' // Better LiveReload support.
+    // Watch all Sass files for better LiveReload functionality.
+    watch: './app/public/css/source/**/*.sass'
   },
   scripts: {
-    src: ['./app/public/js/source/**/*.js', '!./app/public/js/source/config.EXAMPLE.js'],
+    src: [
+      './app/public/js/source/**/*.js',
+      // Don't include the example file in the output
+      '!./app/public/js/source/config.EXAMPLE.js'
+    ],
     dest: './app/public/js/'
   },
   bower_dependencies: {
@@ -56,7 +61,11 @@ gulp.task('styles', function(  ) {
     .pipe(sourcemaps.init())
 
     // - Compile SASS files into CSS
-    .pipe(sass({ outputStyle: 'compressed', indentedSyntax: true, errLogToConsole: true }))
+    .pipe(sass({
+      outputStyle: 'compressed',
+      indentedSyntax: true,
+      errLogToConsole: true
+    }))
 
     // - Use Autoprefixer to add vendor prefixes automatically
     .pipe(autoprefixer())
